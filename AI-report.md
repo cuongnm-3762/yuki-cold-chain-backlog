@@ -26,7 +26,8 @@ Yêu cầu riêng của người dùng: danh sách task phải viết bằng **T
 **Con người tham gia ở các bước sau:**
 - chọn nguồn skill (takumi trước, tự viết nếu không có);
 - chọn tên và chế độ public của repo;
-- cấp quyền `project` cho token `gh` (bước xác nhận trên trình duyệt do người làm).
+- cấp quyền `project` cho token `gh` (bước xác nhận trên trình duyệt do người làm);
+- tạo view Board Sprint 1 trên giao diện web theo hướng dẫn của AI.
 
 **Nội dung backlog, estimate và báo cáo chưa được người duyệt.** Người dùng sẽ review sau khi AI nộp và yêu cầu sửa tiếp. Vì vậy cột "Bạn chốt" trong `estimate.md` hiện là quyết định do AI đề xuất, kèm lý do, chờ người xác nhận.
 
@@ -41,6 +42,7 @@ Yêu cầu riêng của người dùng: danh sách task phải viết bằng **T
 | Ghi Project | `addProjectV2ItemById` báo "Content already exists": khi liên kết repo, một số issue đã vào Project | Sửa script, coi trường hợp này là đã có |
 | Ghi file | Lệnh PowerShell 5.1 (`Get-Content -Raw`) đọc UTF-8 thành ANSI và làm hỏng dấu tiếng Việt trong `tasks.typ` | Viết lại file. Từ đó chỉ sửa file bằng công cụ Edit hoặc Python có `encoding="utf-8"` |
 | Quyền | Người dùng báo đã cấp quyền, nhưng `gh auth status` vẫn chưa có `project` | Mở lệnh refresh trong Terminal panel để người dùng hoàn tất, rồi kiểm lại trước khi ghi |
+| Mở view Board bằng trình duyệt chưa đăng nhập | Bộ lọc AI hướng dẫn ban đầu (`Cấp:Sub-issue,Issue`) lấy cả issue cha, nên cột Done hiện 108 SWP thay vì 67 | Đổi bộ lọc sang `-Cấp:Epic no:sub-issues-progress` (chỉ task leaf). Kiểm lại: tổng các cột 80 SWP, Done 67 |
 | Subagent ghi và đối chiếu SWP | Kiểm trước khi ghi: 28/28 quyết định trong `review.json` khớp `swp` của nguồn (khóa thứ 29 là task cũ đã tách); `score.py` mã thoát 0. Ghi 154 giá trị SWP, đọc lại không có chênh lệch. Truy vấn GraphQL do agent tự viết (không dùng `gh_sync.py`) cho kết quả: 154/154 item có SWP; 106 leaf khớp nguồn; 48 cha (10 epic, 38 issue có sub-issue) có SWP = tổng các con; tổng SWP leaf trên Project = 237. Không có chênh lệch nào | Không cần sửa. Agent chính chạy lại `gh_sync.py verify` cho mọi field (Status, Iteration, giờ, người phụ trách…): 0 chênh lệch |
 
 ## 3. Điểm đặc biệt trong cách dùng AI
@@ -56,6 +58,6 @@ Yêu cầu riêng của người dùng: danh sách task phải viết bằng **T
 - **Số liệu Sprint 1 là giả lập do AI dựng** (trạng thái, giờ thực tế, ngày xong). Báo cáo đúng về hình thức, nhưng không chứng minh được estimate. Tỷ lệ 1,05 chỉ là con số minh họa.
 - **Người phụ trách là tên giả định ghi ở field text**, vì repo chỉ có một tài khoản thật. Khi làm thật cần mời thành viên vào repo để dùng Assignees.
 - **Chưa dùng hết cách làm của takumi `git-projects`.** Script có đọc lại nhưng không có khóa ghi và sổ ghi (ledger) cho từng item. Nếu nhiều người cùng đồng bộ, hai lần chạy có thể ghi chồng nhau.
-- **Board view của Project** (layout board, nhóm theo Status, lọc Iteration) phải tạo trên giao diện web, vì API không hỗ trợ tạo view.
+- **View của Project** (board, cột theo Status, lọc Iteration) phải tạo tay trên giao diện web, vì API không hỗ trợ tạo view. Bước này không đồng bộ được từ nguồn Typst, nên bộ lọc sai lúc đầu chỉ lộ ra khi mở board kiểm bằng mắt.
 
 **Chưa có ý tưởng:** cách hiệu chỉnh khung giờ theo SWP trước khi có velocity thật, mà không quay lại đổi thẳng SWP ra giờ bằng một hệ số tự đặt.
