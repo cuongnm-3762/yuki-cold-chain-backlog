@@ -9,6 +9,9 @@ Ghi field xong luôn đọc lại để đối chiếu (theo tinh thần takumi 
   python -X utf8 tools/gh_sync.py project    # tạo Project, field, iteration, liên kết repo, public
   python -X utf8 tools/gh_sync.py items      # thêm mọi issue vào Project
   python -X utf8 tools/gh_sync.py fields     # ghi Status/Iteration/SWP/giờ/phụ trách... rồi đọc lại
+  python -X utf8 tools/gh_sync.py fields-no-swp  # như trên nhưng bỏ SWP (SWP do agent ghi riêng)
+  python -X utf8 tools/gh_sync.py swp        # chỉ ghi SWP đã review, rồi đọc lại
+  python -X utf8 tools/gh_sync.py verify-swp # chỉ đọc: so SWP trên Project với nguồn
   python -X utf8 tools/gh_sync.py states     # đóng issue Done, mở lại issue chưa Done
   python -X utf8 tools/gh_sync.py verify     # chỉ đọc: so Project với nguồn, in chênh lệch
 """
@@ -259,10 +262,18 @@ def cmd_items(rs):
         it = m["issues"][r["id"]]
         if it["number"] in have:
             continue
-        gql("mutation($p:ID!,$c:ID!){addProjectV2ItemById(input:{projectId:$p,contentId:$c}){item{id}}}",
-            p=pid, c=it["node"])
-        print("item +", r["id"])
+        try:
+            gql("mutation($p:ID!,$c:ID!){addProjectV2ItemById(input:{projectId:$p,contentId:$c}){item{id}}}",
+                p=pid, c=it["node"])
+            print("item +", r["id"])
+        except RuntimeError as e:
+            if "already exists" not in str(e):
+                raise
+            print("item = (đã có)", r["id"])
         time.sleep(0.3)
+
+
+ONLY = None   # None = mọi field; {"SWP"} = chỉ SWP; "no-swp" = mọi field trừ SWP
 
 
 def desired(r: dict) -> dict:
@@ -278,6 +289,10 @@ def desired(r: dict) -> dict:
         v["Vai trò"] = r["role"]
     if r["actual"] not in ("", None):
         v["Giờ thực tế"] = r["actual"]
+    if ONLY == "no-swp":
+        v.pop("SWP")
+    elif ONLY:
+        v = {k: x for k, x in v.items() if k in ONLY}
     return v
 
 
@@ -353,7 +368,12 @@ def cmd_states(rs):
 
 
 def main():
+    global ONLY
     cmd = sys.argv[1] if len(sys.argv) > 1 else "verify"
+    if cmd == "fields-no-swp":
+        ONLY, cmd = "no-swp", "fields"
+    elif cmd in ("swp", "verify-swp"):
+        ONLY, cmd = {"SWP"}, ("fields" if cmd == "swp" else "verify")
     rs = with_epic_status(rows())
     {"labels": cmd_labels, "issues": cmd_issues, "subs": cmd_subs, "project": cmd_project, "items": cmd_items,
      "fields": cmd_fields, "states": cmd_states,

@@ -66,18 +66,18 @@
       if leaf-of(i) {
         let t = i.tasks.at(0)
         rows += (
-          text(weight: "bold", i.id), [Issue], [#i.title], t.r, str(t.s), str(t.c), str(t.swp), str(t.h),
+          text(weight: "bold", i.id), [Issue], [#i.title.replace("`", "")], t.r, str(t.s), str(t.c), str(t.swp), str(t.h),
           it-title(t.it), t.who, table.cell(fill: st-color(t.st), t.st),
         )
       } else {
         rows += (
-          text(weight: "bold", i.id), [Issue], text(weight: "bold")[#i.title], [], [], [],
+          text(weight: "bold", i.id), [Issue], text(weight: "bold")[#i.title.replace("`", "")], [], [], [],
           text(weight: "bold", str(issue-swp(i))), text(weight: "bold", str(issue-h(i))), [], [],
           table.cell(fill: st-color(roll-status(i)), roll-status(i)),
         )
         for (n, t) in i.tasks.enumerate() {
           rows += (
-            i.id + "-" + str(n + 1), [Sub], [#h(8pt)#t.t#if t.at("add", default: false) [ _(phát sinh)_]],
+            i.id + "-" + str(n + 1), [Sub], [#h(8pt)#t.t.replace("`", "")#if t.at("add", default: false) [ _(phát sinh)_]],
             t.r, str(t.s), str(t.c), str(t.swp), str(t.h), it-title(t.it), t.who,
             table.cell(fill: st-color(t.st), t.st),
           )

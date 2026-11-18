@@ -63,7 +63,7 @@
      tasks: (
       (r: "DB", t: "Policy RLS nhóm nhập hàng, tồn kho, lô, sai lệch", s: 2, c: 3, h: 10, swp: 3, it: "S1", who: "Bình", st: "Done", act: 12, done: 4),
       (r: "DB", t: "Policy RLS nhóm đơn hàng, cảnh báo, lịch sử, danh mục", s: 2, c: 3, h: 10, swp: 3, it: "S1", who: "Bình", st: "Done", act: 13, done: 6),
-      (r: "DB", t: "Tách FK `skus.temp_band → temp_policies` trước khi bật RLS (phát sinh)", s: 1, c: 2, h: 4, swp: 1, it: "S1", who: "Bình", st: "Done", act: 4, done: 7, add: true),
+      (r: "DB", t: "Tách FK `skus.temp_band → temp_policies` trước khi bật RLS (phát sinh)", s: 1, c: 2, h: 4, swp: 1, it: "S1", who: "Bình", st: "Done", act: 4, done: 7, add: true, addday: 4),
       (r: "QA", t: "Bộ test RLS (pgTAP) với JWT giả cho 9 vai trò", s: 2, c: 3, h: 10, swp: 3, it: "S1", who: "Hà", st: "In Progress", act: 9, rem: 5),
      )),
     (id: "I-0103", title: "Audit: `actor` lấy từ `auth.uid()` trong trigger",
