@@ -19,6 +19,8 @@
 | GitHub Project | https://github.com/users/cuongnm-3762/projects/2 |
 | Báo cáo HTML của skill chấm SWP (trong repo) | [`swp-report/index.html`](swp-report/index.html). Xem trực tiếp: https://htmlpreview.github.io/?https://github.com/cuongnm-3762/yuki-cold-chain-backlog/blob/main/swp-report/index.html |
 
+Project hiện có view dạng bảng phân cấp (epic → issue → sub-issue). Nên thêm view **Board** (nhóm theo `Status`, lọc `Iteration = Sprint 1`) trên giao diện web, vì API của GitHub không tạo được view.
+
 Đã mở thử cả ba link bằng trình duyệt **chưa đăng nhập GitHub**: cửa sổ trình duyệt riêng của Claude Code, tương đương cửa sổ ẩn danh. Repo, Project (public) và báo cáo HTML đều xem được.
 
 ## Cấu trúc repo
