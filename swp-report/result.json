@@ -1,0 +1,2848 @@
+{
+ "generated": "2026-11-18T13:26:50+09:00",
+ "matrix": {
+  "1": [
+   1,
+   1,
+   2,
+   3
+  ],
+  "2": [
+   1,
+   2,
+   3,
+   5
+  ],
+  "3": [
+   2,
+   3,
+   5,
+   8
+  ],
+  "4": [
+   3,
+   5,
+   8,
+   13
+  ]
+ },
+ "band": {
+  "1": [
+   2,
+   5
+  ],
+  "2": [
+   3,
+   8
+  ],
+  "3": [
+   5,
+   12
+  ],
+  "5": [
+   8,
+   16
+  ]
+ },
+ "totals": {
+  "leaves": 106,
+  "swp": 237,
+  "hours": 719,
+  "matrix_swp": 238
+ },
+ "sample": [
+  {
+   "id": "I-0102-1",
+   "epic": "EP-01",
+   "title": "Policy RLS nhóm nhập hàng, tồn kho, lô, sai lệch",
+   "role": "DB",
+   "s": 2,
+   "c": 3,
+   "matrix": 3,
+   "swp": 3,
+   "hours": 10,
+   "band": [
+    5,
+    12
+   ],
+   "constraint": "",
+   "flags": [
+    "NGAU_NHIEN"
+   ],
+   "ratio": 3.3,
+   "review": {
+    "final": 3,
+    "hours": null,
+    "reason": "Giữ (mẫu ngẫu nhiên)."
+   }
+  },
+  {
+   "id": "I-0205-3",
+   "epic": "EP-02",
+   "title": "Test màn hình theo event.md",
+   "role": "QA",
+   "s": 2,
+   "c": 2,
+   "matrix": 2,
+   "swp": 2,
+   "hours": 6,
+   "band": [
+    3,
+    8
+   ],
+   "constraint": "",
+   "flags": [
+    "NGAU_NHIEN"
+   ],
+   "ratio": 3.0,
+   "review": {
+    "final": 2,
+    "hours": null,
+    "reason": "Giữ (mẫu ngẫu nhiên)."
+   }
+  },
+  {
+   "id": "I-0301-1",
+   "epic": "EP-03",
+   "title": "Migration sổ cái + chuyển dữ liệu `qty_available`",
+   "role": "DB",
+   "s": 2,
+   "c": 3,
+   "matrix": 3,
+   "swp": 3,
+   "hours": 10,
+   "band": [
+    5,
+    12
+   ],
+   "constraint": "",
+   "flags": [
+    "NGAU_NHIEN"
+   ],
+   "ratio": 3.3,
+   "review": {
+    "final": 3,
+    "hours": null,
+    "reason": "Giữ (mẫu ngẫu nhiên). Có chuyển dữ liệu nên C3 là hợp lý."
+   }
+  },
+  {
+   "id": "I-0402-1",
+   "epic": "EP-04",
+   "title": "API-AL-01/02/03 với mã lỗi E014xx",
+   "role": "BE",
+   "s": 2,
+   "c": 2,
+   "matrix": 2,
+   "swp": 2,
+   "hours": 6,
+   "band": [
+    3,
+    8
+   ],
+   "constraint": "",
+   "flags": [
+    "NGAU_NHIEN"
+   ],
+   "ratio": 3.0,
+   "review": {
+    "final": 2,
+    "hours": null,
+    "reason": "Giữ (mẫu ngẫu nhiên)."
+   }
+  },
+  {
+   "id": "I-0503-2",
+   "epic": "EP-05",
+   "title": "`shipment_history_reversals` + API-HIS-02/03",
+   "role": "BE",
+   "s": 2,
+   "c": 3,
+   "matrix": 3,
+   "swp": 3,
+   "hours": 8,
+   "band": [
+    5,
+    12
+   ],
+   "constraint": "",
+   "flags": [
+    "NGAU_NHIEN"
+   ],
+   "ratio": 2.7,
+   "review": {
+    "final": 3,
+    "hours": null,
+    "reason": "Giữ (mẫu ngẫu nhiên)."
+   }
+  },
+  {
+   "id": "I-0602-1",
+   "epic": "EP-06",
+   "title": "API-TP-01…05 + kiểm người lập ≠ người duyệt",
+   "role": "BE",
+   "s": 2,
+   "c": 3,
+   "matrix": 3,
+   "swp": 3,
+   "hours": 10,
+   "band": [
+    5,
+    12
+   ],
+   "constraint": "",
+   "flags": [
+    "NGAU_NHIEN"
+   ],
+   "ratio": 3.3,
+   "review": {
+    "final": 3,
+    "hours": null,
+    "reason": "Giữ (mẫu ngẫu nhiên)."
+   }
+  },
+  {
+   "id": "I-0702-1",
+   "epic": "EP-07",
+   "title": "Dựng ca từ đoạn có kiểu + H-03/H-04",
+   "role": "BE",
+   "s": 1,
+   "c": 3,
+   "matrix": 2,
+   "swp": 2,
+   "hours": 6,
+   "band": [
+    3,
+    8
+   ],
+   "constraint": "Giờ lái 2024",
+   "flags": [
+    "RANG_BUOC"
+   ],
+   "ratio": 3.0,
+   "review": {
+    "final": 2,
+    "hours": null,
+    "reason": "Giữ. Dựng ca chỉ là min/max của các đoạn đã có kiểu."
+   }
+  },
+  {
+   "id": "I-0702-2",
+   "epic": "EP-07",
+   "title": "Đếm ngày > 14 h theo tuần JST (H-05)",
+   "role": "BE",
+   "s": 1,
+   "c": 3,
+   "matrix": 2,
+   "swp": 2,
+   "hours": 5,
+   "band": [
+    3,
+    8
+   ],
+   "constraint": "Giờ lái 2024",
+   "flags": [
+    "RANG_BUOC"
+   ],
+   "ratio": 2.5,
+   "review": {
+    "final": 2,
+    "hours": null,
+    "reason": "Giữ. Tuần JST bắt đầu thứ Hai đã chốt ở PM-10."
+   }
+  },
+  {
+   "id": "I-0704-1",
+   "epic": "EP-07",
+   "title": "Thuật toán `drive_since_break` + nhóm BREAK đạt chuẩn",
+   "role": "BE",
+   "s": 1,
+   "c": 4,
+   "matrix": 3,
+   "swp": 3,
+   "hours": 10,
+   "band": [
+    5,
+    12
+   ],
+   "constraint": "Giờ lái 2024",
+   "flags": [
+    "C4",
+    "RANG_BUOC"
+   ],
+   "ratio": 3.3,
+   "review": {
+    "final": 3,
+    "hours": 10,
+    "reason": "Giữ 3 SWP nhưng tăng 8 → 10 h: ví dụ 8 có quãng nghỉ 10 phút không đạt chuẩn, và nhóm BREAK phải hoàn tất trước mốc 4 h. Cần thêm thời gian cho ca biên."
+   }
+  },
+  {
+   "id": "I-0704-2",
+   "epic": "EP-07",
+   "title": "Trả khoảng vi phạm chính xác (mốc vượt 4 h)",
+   "role": "BE",
+   "s": 1,
+   "c": 3,
+   "matrix": 2,
+   "swp": 2,
+   "hours": 5,
+   "band": [
+    3,
+    8
+   ],
+   "constraint": "Giờ lái 2024",
+   "flags": [
+    "RANG_BUOC"
+   ],
+   "ratio": 2.5,
+   "review": {
+    "final": 2,
+    "hours": null,
+    "reason": "Giữ. Thời điểm vượt mốc là phụ phẩm của thuật toán ở I-0704-1."
+   }
+  },
+  {
+   "id": "I-0705-1",
+   "epic": "EP-07",
+   "title": "Tổng lái theo ngày từ lịch sử + tuyến, trung bình 2 ngày (H-08)",
+   "role": "BE",
+   "s": 2,
+   "c": 3,
+   "matrix": 3,
+   "swp": 3,
+   "hours": 8,
+   "band": [
+    5,
+    12
+   ],
+   "constraint": "Giờ lái 2024",
+   "flags": [
+    "RANG_BUOC"
+   ],
+   "ratio": 2.7,
+   "review": {
+    "final": 3,
+    "hours": 8,
+    "reason": "Giữ 3 SWP, tăng 6 → 8 h: 6 h nằm sát đáy khung và còn phụ thuộc quy ước ca qua nửa đêm (I-0904, PREMISE.md A-01)."
+   }
+  },
+  {
+   "id": "I-0705-2",
+   "epic": "EP-07",
+   "title": "Cửa sổ 2 tuần dương lịch (H-09)",
+   "role": "BE",
+   "s": 1,
+   "c": 3,
+   "matrix": 2,
+   "swp": 2,
+   "hours": 5,
+   "band": [
+    3,
+    8
+   ],
+   "constraint": "Giờ lái 2024",
+   "flags": [
+    "RANG_BUOC"
+   ],
+   "ratio": 2.5,
+   "review": {
+    "final": 2,
+    "hours": null,
+    "reason": "Giữ. Logic giống H-08 nhưng cửa sổ 2 tuần."
+   }
+  },
+  {
+   "id": "I-0706-1",
+   "epic": "EP-07",
+   "title": "Tổng tháng/năm, trần theo thỏa thuận, đếm 6 tháng và 3 tháng liên tiếp",
+   "role": "BE",
+   "s": 2,
+   "c": 4,
+   "matrix": 5,
+   "swp": 5,
+   "hours": 12,
+   "band": [
+    8,
+    16
+   ],
+   "constraint": "Giờ lái 2024",
+   "flags": [
+    "C4",
+    "RANG_BUOC"
+   ],
+   "ratio": 2.4,
+   "review": {
+    "final": 5,
+    "hours": 12,
+    "reason": "Giữ 5 SWP, tăng 10 → 12 h: ngoài tổng tháng/năm còn phải đếm số tháng vượt 284 h (≤ 6/năm, ≤ 3 liên tiếp), là phần bổ sung vào spec (PREMISE.md B-01)."
+   }
+  },
+  {
+   "id": "I-0707-2",
+   "epic": "EP-07",
+   "title": "Ca biên: 4 h 00, nghỉ 9 h 00, qua nửa đêm, 3 tháng liên tiếp",
+   "role": "QA",
+   "s": 2,
+   "c": 3,
+   "matrix": 3,
+   "swp": 3,
+   "hours": 8,
+   "band": [
+    5,
+    12
+   ],
+   "constraint": "Giờ lái 2024",
+   "flags": [
+    "RANG_BUOC"
+   ],
+   "ratio": 2.7,
+   "review": {
+    "final": 3,
+    "hours": null,
+    "reason": "Giữ. Ca biên phải đối chiếu tay với cổng MHLW."
+   }
+  },
+  {
+   "id": "I-0708-1",
+   "epic": "EP-07",
+   "title": "API-DR-01…04",
+   "role": "BE",
+   "s": 2,
+   "c": 3,
+   "matrix": 3,
+   "swp": 3,
+   "hours": 8,
+   "band": [
+    5,
+    12
+   ],
+   "constraint": "Giờ lái 2024",
+   "flags": [
+    "RANG_BUOC"
+   ],
+   "ratio": 2.7,
+   "review": {
+    "final": 3,
+    "hours": null,
+    "reason": "Giữ. Vòng đời giống API-TP nên dùng lại được mẫu."
+   }
+  },
+  {
+   "id": "I-0801",
+   "epic": "EP-08",
+   "title": "Migration 7 bảng tuyến + RLS PLANNER/DRIVER",
+   "role": "DB",
+   "s": 2,
+   "c": 3,
+   "matrix": 3,
+   "swp": 3,
+   "hours": 10,
+   "band": [
+    5,
+    12
+   ],
+   "constraint": "Giờ lái 2024",
+   "flags": [
+    "RANG_BUOC"
+   ],
+   "ratio": 3.3,
+   "review": {
+    "final": 3,
+    "hours": null,
+    "reason": "Giữ. 7 bảng nhưng cấu trúc đã có ở table-definitions.md; phần khó là RLS cho DRIVER."
+   }
+  },
+  {
+   "id": "I-0802-2",
+   "epic": "EP-08",
+   "title": "API-RT-04 lưu phiên bản nháp, kiểm đoạn chồng lấn",
+   "role": "BE",
+   "s": 2,
+   "c": 3,
+   "matrix": 3,
+   "swp": 3,
+   "hours": 8,
+   "band": [
+    5,
+    12
+   ],
+   "constraint": "Giờ lái 2024",
+   "flags": [
+    "RANG_BUOC"
+   ],
+   "ratio": 2.7,
+   "review": {
+    "final": 3,
+    "hours": null,
+    "reason": "Giữ. Kiểm đoạn chồng lấn là ràng buộc exclusion trong DB."
+   }
+  },
+  {
+   "id": "I-0803-1",
+   "epic": "EP-08",
+   "title": "Interface adapter + bản giả lập + nhập tay + cache",
+   "role": "BE",
+   "s": 2,
+   "c": 3,
+   "matrix": 3,
+   "swp": 3,
+   "hours": 8,
+   "band": [
+    5,
+    12
+   ],
+   "constraint": "Giờ lái 2024",
+   "flags": [
+    "RANG_BUOC"
+   ],
+   "ratio": 2.7,
+   "review": {
+    "final": 3,
+    "hours": null,
+    "reason": "Giữ. Nhập tay khi lỗi là đường chính cho tới khi có Q-23."
+   }
+  },
+  {
+   "id": "I-0803-2",
+   "epic": "EP-08",
+   "title": "Adapter nhà cung cấp bản đồ: thời gian chạy xe tải theo đoạn (chờ Q-23)",
+   "role": "BE",
+   "s": 2,
+   "c": 3,
+   "matrix": 3,
+   "swp": 3,
+   "hours": 6,
+   "band": [
+    5,
+    12
+   ],
+   "constraint": "Giờ lái 2024",
+   "flags": [
+    "RANG_BUOC"
+   ],
+   "ratio": 2.0,
+   "review": {
+    "final": 3,
+    "hours": null,
+    "reason": "Phần tách từ task cũ. Giữ 3: một adapter, nhiều nhánh lỗi/timeout."
+   }
+  },
+  {
+   "id": "I-0804-2",
+   "epic": "EP-08",
+   "title": "Thuật toán gợi ý điểm nghỉ (API-RT-06)",
+   "role": "BE",
+   "s": 1,
+   "c": 4,
+   "matrix": 3,
+   "swp": 3,
+   "hours": 8,
+   "band": [
+    5,
+    12
+   ],
+   "constraint": "Giờ lái 2024",
+   "flags": [
+    "C4",
+    "RANG_BUOC"
+   ],
+   "ratio": 2.7,
+   "review": {
+    "final": 3,
+    "hours": null,
+    "reason": "Giữ. Spec yêu cầu gợi ý tại điểm dừng hoặc vị trí nghỉ nhưng không có dữ liệu vị trí nghỉ, nên chỉ gợi ý tại điểm dừng của tuyến (giả định PREMISE.md A-02). Phạm vi vẫn là S1."
+   }
+  },
+  {
+   "id": "I-0805-1",
+   "epic": "EP-08",
+   "title": "Hàm công bố nguyên tử + upsert `driver_duty_days`",
+   "role": "BE",
+   "s": 2,
+   "c": 3,
+   "matrix": 3,
+   "swp": 3,
+   "hours": 8,
+   "band": [
+    5,
+    12
+   ],
+   "constraint": "Giờ lái 2024",
+   "flags": [
+    "RANG_BUOC"
+   ],
+   "ratio": 2.7,
+   "review": {
+    "final": 3,
+    "hours": null,
+    "reason": "Giữ. Giao dịch nguyên tử giống mẫu publish."
+   }
+  },
+  {
+   "id": "I-0806",
+   "epic": "EP-08",
+   "title": "Ghi sự kiện khẩn cấp + loại trừ có phạm vi",
+   "role": "BE",
+   "s": 2,
+   "c": 3,
+   "matrix": 3,
+   "swp": 3,
+   "hours": 8,
+   "band": [
+    5,
+    12
+   ],
+   "constraint": "Giờ lái 2024",
+   "flags": [
+    "RANG_BUOC"
+   ],
+   "ratio": 2.7,
+   "review": {
+    "final": 3,
+    "hours": null,
+    "reason": "Giữ. Phạm vi loại trừ chỉ 3 phép kiểm, đã định nghĩa ở driver-hours.md §5."
+   }
+  },
+  {
+   "id": "I-0808-1",
+   "epic": "EP-08",
+   "title": "Trình sửa các đoạn có kiểu",
+   "role": "FE",
+   "s": 3,
+   "c": 3,
+   "matrix": 5,
+   "swp": 5,
+   "hours": 14,
+   "band": [
+    8,
+    16
+   ],
+   "constraint": "Giờ lái 2024",
+   "flags": [
+    "RANG_BUOC"
+   ],
+   "ratio": 2.8,
+   "review": {
+    "final": 5,
+    "hours": null,
+    "reason": "Giữ. Trình sửa đoạn có kéo thả và kiểm tức thời là phần FE lớn nhất của dự án."
+   }
+  },
+  {
+   "id": "I-0808-2",
+   "epic": "EP-08",
+   "title": "Timeline tô khoảng vi phạm + gợi ý nghỉ",
+   "role": "FE",
+   "s": 3,
+   "c": 3,
+   "matrix": 5,
+   "swp": 5,
+   "hours": 12,
+   "band": [
+    8,
+    16
+   ],
+   "constraint": "Giờ lái 2024",
+   "flags": [
+    "RANG_BUOC"
+   ],
+   "ratio": 2.4,
+   "review": {
+    "final": 5,
+    "hours": null,
+    "reason": "Giữ. Tô khoảng vi phạm chính xác tới phút trên timeline."
+   }
+  },
+  {
+   "id": "I-0902-1",
+   "epic": "EP-09",
+   "title": "API nạp CSV `driver_duty_days`, kiểm trùng với ROUTE",
+   "role": "BE",
+   "s": 2,
+   "c": 3,
+   "matrix": 3,
+   "swp": 3,
+   "hours": 8,
+   "band": [
+    5,
+    12
+   ],
+   "constraint": "Giờ lái 2024",
+   "flags": [
+    "RANG_BUOC"
+   ],
+   "ratio": 2.7,
+   "review": {
+    "final": 3,
+    "hours": null,
+    "reason": "Giữ. Kiểm trùng IMPORT/ROUTE theo ngày là nhánh chính."
+   }
+  },
+  {
+   "id": "I-0904",
+   "epic": "EP-09",
+   "title": "Đề xuất quy ước kèm ví dụ, gửi hỏi Yuki",
+   "role": "BA",
+   "s": 1,
+   "c": 3,
+   "matrix": 2,
+   "swp": 1,
+   "hours": 4,
+   "band": [
+    3,
+    8
+   ],
+   "constraint": "Giờ lái 2024",
+   "flags": [
+    "LECH",
+    "RANG_BUOC"
+   ],
+   "ratio": 4.0,
+   "review": {
+    "final": 1,
+    "hours": null,
+    "reason": "Hạ 2 → 1. Task chỉ soạn câu hỏi và ví dụ. Độ khó C3 của quy định thuộc phần cài đặt sau khi có trả lời (I-0705-1, I-0707-2), không thuộc task này. Giữ S/C như cũ để vết lệch hiện trên báo cáo."
+   }
+  },
+  {
+   "id": "I-1001-1",
+   "epic": "EP-10",
+   "title": "Dựng project Tokyo, biến môi trường, secret",
+   "role": "OPS",
+   "s": 2,
+   "c": 2,
+   "matrix": 2,
+   "swp": 2,
+   "hours": 6,
+   "band": [
+    3,
+    8
+   ],
+   "constraint": "",
+   "flags": [
+    "NGAU_NHIEN"
+   ],
+   "ratio": 3.0,
+   "review": {
+    "final": 2,
+    "hours": null,
+    "reason": "Giữ (mẫu ngẫu nhiên)."
+   }
+  }
+ ],
+ "pending": [],
+ "unapplied": [],
+ "must_split": [],
+ "split_history": {
+  "I-0803-2 (cũ)": {
+   "was": "Tích hợp nhà cung cấp bản đồ thật — S4 × C3 → 8 SWP, 10 h",
+   "final": "tách 3 + 2",
+   "hours": null,
+   "reason": "SWP 8 vượt trần của một task. Tách thành adapter gọi API thời gian chạy xe tải (3 SWP, 6 h) và kiểm thử với sandbox nhà cung cấp, đo timeout/cache (2 SWP, 4 h). Cả hai vẫn chờ Q-23."
+  }
+ },
+ "tasks": [
+  {
+   "id": "I-0101-1",
+   "epic": "EP-01",
+   "title": "Bảng `user_roles` + hook đưa vai trò vào claim JWT",
+   "role": "DB",
+   "s": 2,
+   "c": 3,
+   "matrix": 3,
+   "swp": 3,
+   "hours": 8,
+   "band": [
+    5,
+    12
+   ],
+   "constraint": "",
+   "flags": [],
+   "ratio": 2.7
+  },
+  {
+   "id": "I-0101-2",
+   "epic": "EP-01",
+   "title": "`requireRole` đọc claim + API-CM-05 `/api/me`",
+   "role": "BE",
+   "s": 2,
+   "c": 2,
+   "matrix": 2,
+   "swp": 2,
+   "hours": 6,
+   "band": [
+    3,
+    8
+   ],
+   "constraint": "",
+   "flags": [],
+   "ratio": 3.0
+  },
+  {
+   "id": "I-0101-3",
+   "epic": "EP-01",
+   "title": "Menu và nút lọc theo vai trò (ma trận 18 màn × 9 vai trò)",
+   "role": "FE",
+   "s": 2,
+   "c": 2,
+   "matrix": 2,
+   "swp": 2,
+   "hours": 8,
+   "band": [
+    3,
+    8
+   ],
+   "constraint": "",
+   "flags": [],
+   "ratio": 4.0
+  },
+  {
+   "id": "I-0101-4",
+   "epic": "EP-01",
+   "title": "Test ma trận quyền 9 vai trò × 18 màn (menu ẩn, URL trả E09002)",
+   "role": "QA",
+   "s": 3,
+   "c": 2,
+   "matrix": 3,
+   "swp": 3,
+   "hours": 8,
+   "band": [
+    5,
+    12
+   ],
+   "constraint": "",
+   "flags": [],
+   "ratio": 2.7
+  },
+  {
+   "id": "I-0102-1",
+   "epic": "EP-01",
+   "title": "Policy RLS nhóm nhập hàng, tồn kho, lô, sai lệch",
+   "role": "DB",
+   "s": 2,
+   "c": 3,
+   "matrix": 3,
+   "swp": 3,
+   "hours": 10,
+   "band": [
+    5,
+    12
+   ],
+   "constraint": "",
+   "flags": [
+    "NGAU_NHIEN"
+   ],
+   "ratio": 3.3,
+   "review": {
+    "final": 3,
+    "hours": null,
+    "reason": "Giữ (mẫu ngẫu nhiên)."
+   }
+  },
+  {
+   "id": "I-0102-2",
+   "epic": "EP-01",
+   "title": "Policy RLS nhóm đơn hàng, cảnh báo, lịch sử, danh mục",
+   "role": "DB",
+   "s": 2,
+   "c": 3,
+   "matrix": 3,
+   "swp": 3,
+   "hours": 10,
+   "band": [
+    5,
+    12
+   ],
+   "constraint": "",
+   "flags": [],
+   "ratio": 3.3
+  },
+  {
+   "id": "I-0102-3",
+   "epic": "EP-01",
+   "title": "Tách FK `skus.temp_band → temp_policies` trước khi bật RLS (phát sinh)",
+   "role": "DB",
+   "s": 1,
+   "c": 2,
+   "matrix": 1,
+   "swp": 1,
+   "hours": 4,
+   "band": [
+    2,
+    5
+   ],
+   "constraint": "",
+   "flags": [],
+   "ratio": 4.0
+  },
+  {
+   "id": "I-0102-4",
+   "epic": "EP-01",
+   "title": "Bộ test RLS (pgTAP) với JWT giả cho 9 vai trò",
+   "role": "QA",
+   "s": 2,
+   "c": 3,
+   "matrix": 3,
+   "swp": 3,
+   "hours": 10,
+   "band": [
+    5,
+    12
+   ],
+   "constraint": "",
+   "flags": [],
+   "ratio": 3.3
+  },
+  {
+   "id": "I-0103-1",
+   "epic": "EP-01",
+   "title": "Trigger gán actor từ `auth.uid()`, thu hồi quyền insert trực tiếp",
+   "role": "DB",
+   "s": 2,
+   "c": 2,
+   "matrix": 2,
+   "swp": 2,
+   "hours": 6,
+   "band": [
+    3,
+    8
+   ],
+   "constraint": "",
+   "flags": [],
+   "ratio": 3.0
+  },
+  {
+   "id": "I-0103-2",
+   "epic": "EP-01",
+   "title": "Bỏ tham số actor ở mọi call site",
+   "role": "BE",
+   "s": 2,
+   "c": 1,
+   "matrix": 1,
+   "swp": 1,
+   "hours": 3,
+   "band": [
+    2,
+    5
+   ],
+   "constraint": "",
+   "flags": [],
+   "ratio": 3.0
+  },
+  {
+   "id": "I-0103-3",
+   "epic": "EP-01",
+   "title": "Test lặp lại kịch bản giả mạo actor (SPOOF_TEST)",
+   "role": "QA",
+   "s": 1,
+   "c": 2,
+   "matrix": 1,
+   "swp": 1,
+   "hours": 3,
+   "band": [
+    2,
+    5
+   ],
+   "constraint": "",
+   "flags": [],
+   "ratio": 3.0
+  },
+  {
+   "id": "I-0104-1",
+   "epic": "EP-01",
+   "title": "Mô-đun `errors.ts`, định dạng lỗi chuẩn, ánh xạ 67 mã",
+   "role": "BE",
+   "s": 2,
+   "c": 2,
+   "matrix": 2,
+   "swp": 2,
+   "hours": 8,
+   "band": [
+    3,
+    8
+   ],
+   "constraint": "",
+   "flags": [],
+   "ratio": 4.0
+  },
+  {
+   "id": "I-0104-2",
+   "epic": "EP-01",
+   "title": "Danh mục thông điệp và component hiển thị lỗi",
+   "role": "FE",
+   "s": 2,
+   "c": 2,
+   "matrix": 2,
+   "swp": 2,
+   "hours": 6,
+   "band": [
+    3,
+    8
+   ],
+   "constraint": "",
+   "flags": [],
+   "ratio": 3.0
+  },
+  {
+   "id": "I-0104-3",
+   "epic": "EP-01",
+   "title": "Cột `block_reason_code` + chuyển dữ liệu văn bản cũ",
+   "role": "DB",
+   "s": 2,
+   "c": 2,
+   "matrix": 2,
+   "swp": 2,
+   "hours": 5,
+   "band": [
+    3,
+    8
+   ],
+   "constraint": "",
+   "flags": [],
+   "ratio": 2.5
+  },
+  {
+   "id": "I-0105-1",
+   "epic": "EP-01",
+   "title": "Màn AUTH_LOGIN đủ trạng thái theo spec",
+   "role": "FE",
+   "s": 2,
+   "c": 1,
+   "matrix": 1,
+   "swp": 1,
+   "hours": 5,
+   "band": [
+    2,
+    5
+   ],
+   "constraint": "",
+   "flags": [],
+   "ratio": 5.0
+  },
+  {
+   "id": "I-0105-2",
+   "epic": "EP-01",
+   "title": "Phiên ngắn và tự đăng xuất",
+   "role": "BE",
+   "s": 1,
+   "c": 2,
+   "matrix": 1,
+   "swp": 1,
+   "hours": 4,
+   "band": [
+    2,
+    5
+   ],
+   "constraint": "",
+   "flags": [],
+   "ratio": 4.0
+  },
+  {
+   "id": "I-0106-1",
+   "epic": "EP-01",
+   "title": "DASHBOARD: bộ đếm theo vai trò",
+   "role": "FE",
+   "s": 2,
+   "c": 1,
+   "matrix": 1,
+   "swp": 1,
+   "hours": 5,
+   "band": [
+    2,
+    5
+   ],
+   "constraint": "",
+   "flags": [],
+   "ratio": 5.0
+  },
+  {
+   "id": "I-0106-2",
+   "epic": "EP-01",
+   "title": "MASTER_VIEW chỉ xem",
+   "role": "FE",
+   "s": 2,
+   "c": 1,
+   "matrix": 1,
+   "swp": 1,
+   "hours": 4,
+   "band": [
+    2,
+    5
+   ],
+   "constraint": "",
+   "flags": [],
+   "ratio": 4.0
+  },
+  {
+   "id": "I-0106-3",
+   "epic": "EP-01",
+   "title": "AUDIT_LOG: lọc, tìm, phân trang",
+   "role": "FE",
+   "s": 2,
+   "c": 2,
+   "matrix": 2,
+   "swp": 2,
+   "hours": 8,
+   "band": [
+    3,
+    8
+   ],
+   "constraint": "",
+   "flags": [],
+   "ratio": 4.0
+  },
+  {
+   "id": "I-0107",
+   "epic": "EP-01",
+   "title": "Cờ build loại endpoint demo + kiểm tra trên bản build",
+   "role": "OPS",
+   "s": 1,
+   "c": 1,
+   "matrix": 1,
+   "swp": 1,
+   "hours": 2,
+   "band": [
+    2,
+    5
+   ],
+   "constraint": "",
+   "flags": [],
+   "ratio": 2.0
+  },
+  {
+   "id": "I-0108",
+   "epic": "EP-01",
+   "title": "Rà 8 chỗ mượn mã, quyết định, cập nhật danh mục",
+   "role": "TL",
+   "s": 2,
+   "c": 2,
+   "matrix": 2,
+   "swp": 2,
+   "hours": 4,
+   "band": [
+    3,
+    8
+   ],
+   "constraint": "",
+   "flags": [],
+   "ratio": 2.0
+  },
+  {
+   "id": "I-0201",
+   "epic": "EP-02",
+   "title": "`tempInBand(version)` + 10 ví dụ thành unit test",
+   "role": "BE",
+   "s": 1,
+   "c": 2,
+   "matrix": 1,
+   "swp": 1,
+   "hours": 5,
+   "band": [
+    2,
+    5
+   ],
+   "constraint": "",
+   "flags": [],
+   "ratio": 5.0
+  },
+  {
+   "id": "I-0202-1",
+   "epic": "EP-02",
+   "title": "Hàm `submit_inspection` (plpgsql) nguyên tử",
+   "role": "DB",
+   "s": 2,
+   "c": 3,
+   "matrix": 3,
+   "swp": 3,
+   "hours": 10,
+   "band": [
+    5,
+    12
+   ],
+   "constraint": "",
+   "flags": [],
+   "ratio": 3.3
+  },
+  {
+   "id": "I-0202-2",
+   "epic": "EP-02",
+   "title": "Route handler gọi RPC, kiểm đầu vào, ánh xạ mã lỗi",
+   "role": "BE",
+   "s": 2,
+   "c": 2,
+   "matrix": 2,
+   "swp": 2,
+   "hours": 6,
+   "band": [
+    3,
+    8
+   ],
+   "constraint": "",
+   "flags": [],
+   "ratio": 3.0
+  },
+  {
+   "id": "I-0202-3",
+   "epic": "EP-02",
+   "title": "Test gửi đồng thời và gửi lặp",
+   "role": "QA",
+   "s": 2,
+   "c": 3,
+   "matrix": 3,
+   "swp": 3,
+   "hours": 6,
+   "band": [
+    5,
+    12
+   ],
+   "constraint": "",
+   "flags": [],
+   "ratio": 2.0
+  },
+  {
+   "id": "I-0203-1",
+   "epic": "EP-02",
+   "title": "Kiểm tra làn truy xuất E01107/E01108",
+   "role": "BE",
+   "s": 1,
+   "c": 2,
+   "matrix": 1,
+   "swp": 1,
+   "hours": 4,
+   "band": [
+    2,
+    5
+   ],
+   "constraint": "",
+   "flags": [],
+   "ratio": 4.0
+  },
+  {
+   "id": "I-0203-2",
+   "epic": "EP-02",
+   "title": "Trường động theo làn truy xuất",
+   "role": "FE",
+   "s": 2,
+   "c": 2,
+   "matrix": 2,
+   "swp": 2,
+   "hours": 5,
+   "band": [
+    3,
+    8
+   ],
+   "constraint": "",
+   "flags": [],
+   "ratio": 2.5
+  },
+  {
+   "id": "I-0204",
+   "epic": "EP-02",
+   "title": "INBOUND_LIST: lọc, trạng thái, phân trang",
+   "role": "FE",
+   "s": 2,
+   "c": 1,
+   "matrix": 1,
+   "swp": 1,
+   "hours": 5,
+   "band": [
+    2,
+    5
+   ],
+   "constraint": "",
+   "flags": [],
+   "ratio": 5.0
+  },
+  {
+   "id": "I-0205-1",
+   "epic": "EP-02",
+   "title": "Form kiểm nhập + đánh giá trực tiếp + trạng thái cách ly",
+   "role": "FE",
+   "s": 3,
+   "c": 2,
+   "matrix": 3,
+   "swp": 3,
+   "hours": 12,
+   "band": [
+    5,
+    12
+   ],
+   "constraint": "",
+   "flags": [],
+   "ratio": 4.0
+  },
+  {
+   "id": "I-0205-2",
+   "epic": "EP-02",
+   "title": "Tối ưu máy tính bảng (vùng chạm, bàn phím số)",
+   "role": "FE",
+   "s": 1,
+   "c": 1,
+   "matrix": 1,
+   "swp": 1,
+   "hours": 3,
+   "band": [
+    2,
+    5
+   ],
+   "constraint": "",
+   "flags": [],
+   "ratio": 3.0
+  },
+  {
+   "id": "I-0205-3",
+   "epic": "EP-02",
+   "title": "Test màn hình theo event.md",
+   "role": "QA",
+   "s": 2,
+   "c": 2,
+   "matrix": 2,
+   "swp": 2,
+   "hours": 6,
+   "band": [
+    3,
+    8
+   ],
+   "constraint": "",
+   "flags": [
+    "NGAU_NHIEN"
+   ],
+   "ratio": 3.0,
+   "review": {
+    "final": 2,
+    "hours": null,
+    "reason": "Giữ (mẫu ngẫu nhiên)."
+   }
+  },
+  {
+   "id": "I-0301-1",
+   "epic": "EP-03",
+   "title": "Migration sổ cái + chuyển dữ liệu `qty_available`",
+   "role": "DB",
+   "s": 2,
+   "c": 3,
+   "matrix": 3,
+   "swp": 3,
+   "hours": 10,
+   "band": [
+    5,
+    12
+   ],
+   "constraint": "",
+   "flags": [
+    "NGAU_NHIEN"
+   ],
+   "ratio": 3.3,
+   "review": {
+    "final": 3,
+    "hours": null,
+    "reason": "Giữ (mẫu ngẫu nhiên). Có chuyển dữ liệu nên C3 là hợp lý."
+   }
+  },
+  {
+   "id": "I-0301-2",
+   "epic": "EP-03",
+   "title": "Hàm `allocate_lot` / `release_lot` với `for update`",
+   "role": "DB",
+   "s": 2,
+   "c": 3,
+   "matrix": 3,
+   "swp": 3,
+   "hours": 10,
+   "band": [
+    5,
+    12
+   ],
+   "constraint": "",
+   "flags": [],
+   "ratio": 3.3
+  },
+  {
+   "id": "I-0302-1",
+   "epic": "EP-03",
+   "title": "`evaluateLot` 7 bước + bằng chứng từng lô",
+   "role": "BE",
+   "s": 2,
+   "c": 3,
+   "matrix": 3,
+   "swp": 3,
+   "hours": 10,
+   "band": [
+    5,
+    12
+   ],
+   "constraint": "",
+   "flags": [],
+   "ratio": 3.3
+  },
+  {
+   "id": "I-0302-2",
+   "epic": "EP-03",
+   "title": "Tách nhiều lô FEFO/FIFO",
+   "role": "BE",
+   "s": 2,
+   "c": 3,
+   "matrix": 3,
+   "swp": 3,
+   "hours": 8,
+   "band": [
+    5,
+    12
+   ],
+   "constraint": "",
+   "flags": [],
+   "ratio": 2.7
+  },
+  {
+   "id": "I-0302-3",
+   "epic": "EP-03",
+   "title": "Ví dụ allocation-chain thành unit test",
+   "role": "QA",
+   "s": 1,
+   "c": 2,
+   "matrix": 1,
+   "swp": 1,
+   "hours": 5,
+   "band": [
+    2,
+    5
+   ],
+   "constraint": "",
+   "flags": [],
+   "ratio": 5.0
+  },
+  {
+   "id": "I-0303-1",
+   "epic": "EP-03",
+   "title": "API-OUT-03 phân bổ mỗi dòng một giao dịch",
+   "role": "BE",
+   "s": 2,
+   "c": 3,
+   "matrix": 3,
+   "swp": 3,
+   "hours": 8,
+   "band": [
+    5,
+    12
+   ],
+   "constraint": "",
+   "flags": [],
+   "ratio": 2.7
+  },
+  {
+   "id": "I-0303-2",
+   "epic": "EP-03",
+   "title": "API-OUT-05 chọn lô thủ công + API-OUT-07 hủy phân bổ",
+   "role": "BE",
+   "s": 2,
+   "c": 2,
+   "matrix": 2,
+   "swp": 2,
+   "hours": 6,
+   "band": [
+    3,
+    8
+   ],
+   "constraint": "",
+   "flags": [],
+   "ratio": 3.0
+  },
+  {
+   "id": "I-0304-1",
+   "epic": "EP-03",
+   "title": "OUTBOUND_LIST",
+   "role": "FE",
+   "s": 2,
+   "c": 1,
+   "matrix": 1,
+   "swp": 1,
+   "hours": 4,
+   "band": [
+    2,
+    5
+   ],
+   "constraint": "",
+   "flags": [],
+   "ratio": 4.0
+  },
+  {
+   "id": "I-0304-2",
+   "epic": "EP-03",
+   "title": "OUTBOUND_ALLOCATION: chuỗi đánh giá, tách lô",
+   "role": "FE",
+   "s": 3,
+   "c": 3,
+   "matrix": 5,
+   "swp": 5,
+   "hours": 14,
+   "band": [
+    8,
+    16
+   ],
+   "constraint": "",
+   "flags": [],
+   "ratio": 2.8
+  },
+  {
+   "id": "I-0305-1",
+   "epic": "EP-03",
+   "title": "API-OUT-06: seal, nhiệt khoang, quét lô",
+   "role": "BE",
+   "s": 2,
+   "c": 3,
+   "matrix": 3,
+   "swp": 3,
+   "hours": 10,
+   "band": [
+    5,
+    12
+   ],
+   "constraint": "",
+   "flags": [],
+   "ratio": 3.3
+  },
+  {
+   "id": "I-0305-2",
+   "epic": "EP-03",
+   "title": "Màn kiểm xuất + quét mã lô",
+   "role": "FE",
+   "s": 3,
+   "c": 2,
+   "matrix": 3,
+   "swp": 3,
+   "hours": 10,
+   "band": [
+    5,
+    12
+   ],
+   "constraint": "",
+   "flags": [],
+   "ratio": 3.3
+  },
+  {
+   "id": "I-0305-3",
+   "epic": "EP-03",
+   "title": "Test đạt / chặn / tạo deviation",
+   "role": "QA",
+   "s": 2,
+   "c": 2,
+   "matrix": 2,
+   "swp": 2,
+   "hours": 6,
+   "band": [
+    3,
+    8
+   ],
+   "constraint": "",
+   "flags": [],
+   "ratio": 3.0
+  },
+  {
+   "id": "I-0401-1",
+   "epic": "EP-04",
+   "title": "Truy vấn lần giao gần nhất + tạo cảnh báo",
+   "role": "BE",
+   "s": 2,
+   "c": 3,
+   "matrix": 3,
+   "swp": 3,
+   "hours": 8,
+   "band": [
+    5,
+    12
+   ],
+   "constraint": "",
+   "flags": [],
+   "ratio": 2.7
+  },
+  {
+   "id": "I-0401-2",
+   "epic": "EP-04",
+   "title": "Test ví dụ đảo hạn",
+   "role": "QA",
+   "s": 1,
+   "c": 2,
+   "matrix": 1,
+   "swp": 1,
+   "hours": 4,
+   "band": [
+    2,
+    5
+   ],
+   "constraint": "",
+   "flags": [],
+   "ratio": 4.0
+  },
+  {
+   "id": "I-0402-1",
+   "epic": "EP-04",
+   "title": "API-AL-01/02/03 với mã lỗi E014xx",
+   "role": "BE",
+   "s": 2,
+   "c": 2,
+   "matrix": 2,
+   "swp": 2,
+   "hours": 6,
+   "band": [
+    3,
+    8
+   ],
+   "constraint": "",
+   "flags": [
+    "NGAU_NHIEN"
+   ],
+   "ratio": 3.0,
+   "review": {
+    "final": 2,
+    "hours": null,
+    "reason": "Giữ (mẫu ngẫu nhiên)."
+   }
+  },
+  {
+   "id": "I-0402-2",
+   "epic": "EP-04",
+   "title": "Danh sách + chi tiết so sánh lô",
+   "role": "FE",
+   "s": 3,
+   "c": 2,
+   "matrix": 3,
+   "swp": 3,
+   "hours": 10,
+   "band": [
+    5,
+    12
+   ],
+   "constraint": "",
+   "flags": [],
+   "ratio": 3.3
+  },
+  {
+   "id": "I-0501-1",
+   "epic": "EP-05",
+   "title": "Bảng + trigger chỉ ghi thêm + hàm `change_lot_status`",
+   "role": "DB",
+   "s": 2,
+   "c": 3,
+   "matrix": 3,
+   "swp": 3,
+   "hours": 8,
+   "band": [
+    5,
+    12
+   ],
+   "constraint": "",
+   "flags": [],
+   "ratio": 2.7
+  },
+  {
+   "id": "I-0501-2",
+   "epic": "EP-05",
+   "title": "API-LOT-02/03 theo ma trận vai trò",
+   "role": "BE",
+   "s": 2,
+   "c": 2,
+   "matrix": 2,
+   "swp": 2,
+   "hours": 6,
+   "band": [
+    3,
+    8
+   ],
+   "constraint": "",
+   "flags": [],
+   "ratio": 3.0
+  },
+  {
+   "id": "I-0502-1",
+   "epic": "EP-05",
+   "title": "LOT_INVENTORY: lọc dải nhiệt, trạng thái",
+   "role": "FE",
+   "s": 2,
+   "c": 2,
+   "matrix": 2,
+   "swp": 2,
+   "hours": 8,
+   "band": [
+    3,
+    8
+   ],
+   "constraint": "",
+   "flags": [],
+   "ratio": 4.0
+  },
+  {
+   "id": "I-0502-2",
+   "epic": "EP-05",
+   "title": "LOT_DETAIL: dòng thời gian + đổi trạng thái",
+   "role": "FE",
+   "s": 3,
+   "c": 2,
+   "matrix": 3,
+   "swp": 3,
+   "hours": 10,
+   "band": [
+    5,
+    12
+   ],
+   "constraint": "",
+   "flags": [],
+   "ratio": 3.3
+  },
+  {
+   "id": "I-0503-1",
+   "epic": "EP-05",
+   "title": "API-HIS-04 nhận sự kiện POD (xác thực chữ ký)",
+   "role": "BE",
+   "s": 2,
+   "c": 2,
+   "matrix": 2,
+   "swp": 2,
+   "hours": 6,
+   "band": [
+    3,
+    8
+   ],
+   "constraint": "",
+   "flags": [],
+   "ratio": 3.0
+  },
+  {
+   "id": "I-0503-2",
+   "epic": "EP-05",
+   "title": "`shipment_history_reversals` + API-HIS-02/03",
+   "role": "BE",
+   "s": 2,
+   "c": 3,
+   "matrix": 3,
+   "swp": 3,
+   "hours": 8,
+   "band": [
+    5,
+    12
+   ],
+   "constraint": "",
+   "flags": [
+    "NGAU_NHIEN"
+   ],
+   "ratio": 2.7,
+   "review": {
+    "final": 3,
+    "hours": null,
+    "reason": "Giữ (mẫu ngẫu nhiên)."
+   }
+  },
+  {
+   "id": "I-0503-3",
+   "epic": "EP-05",
+   "title": "SHIPMENT_HISTORY + đề xuất / duyệt đảo",
+   "role": "FE",
+   "s": 3,
+   "c": 2,
+   "matrix": 3,
+   "swp": 3,
+   "hours": 10,
+   "band": [
+    5,
+    12
+   ],
+   "constraint": "",
+   "flags": [],
+   "ratio": 3.3
+  },
+  {
+   "id": "I-0503-4",
+   "epic": "EP-05",
+   "title": "Test người lập ≠ người duyệt (E01902)",
+   "role": "QA",
+   "s": 1,
+   "c": 2,
+   "matrix": 1,
+   "swp": 1,
+   "hours": 3,
+   "band": [
+    2,
+    5
+   ],
+   "constraint": "",
+   "flags": [],
+   "ratio": 3.0
+  },
+  {
+   "id": "I-0601-1",
+   "epic": "EP-06",
+   "title": "Schema phiên bản + nạp v1 (PM-05)",
+   "role": "DB",
+   "s": 2,
+   "c": 2,
+   "matrix": 2,
+   "swp": 2,
+   "hours": 6,
+   "band": [
+    3,
+    8
+   ],
+   "constraint": "",
+   "flags": [],
+   "ratio": 3.0
+  },
+  {
+   "id": "I-0601-2",
+   "epic": "EP-06",
+   "title": "Bắt buộc một chữ số thập phân, bỏ làm tròn `numeric(4,1)`",
+   "role": "DB",
+   "s": 1,
+   "c": 2,
+   "matrix": 1,
+   "swp": 1,
+   "hours": 3,
+   "band": [
+    2,
+    5
+   ],
+   "constraint": "",
+   "flags": [],
+   "ratio": 3.0
+  },
+  {
+   "id": "I-0602-1",
+   "epic": "EP-06",
+   "title": "API-TP-01…05 + kiểm người lập ≠ người duyệt",
+   "role": "BE",
+   "s": 2,
+   "c": 3,
+   "matrix": 3,
+   "swp": 3,
+   "hours": 10,
+   "band": [
+    5,
+    12
+   ],
+   "constraint": "",
+   "flags": [
+    "NGAU_NHIEN"
+   ],
+   "ratio": 3.3,
+   "review": {
+    "final": 3,
+    "hours": null,
+    "reason": "Giữ (mẫu ngẫu nhiên)."
+   }
+  },
+  {
+   "id": "I-0602-2",
+   "epic": "EP-06",
+   "title": "Job kích hoạt theo `effective_from` (pg_cron)",
+   "role": "DB",
+   "s": 2,
+   "c": 2,
+   "matrix": 2,
+   "swp": 2,
+   "hours": 5,
+   "band": [
+    3,
+    8
+   ],
+   "constraint": "",
+   "flags": [],
+   "ratio": 2.5
+  },
+  {
+   "id": "I-0603-1",
+   "epic": "EP-06",
+   "title": "TEMP_POLICY: danh sách phiên bản, form nháp, duyệt",
+   "role": "FE",
+   "s": 3,
+   "c": 2,
+   "matrix": 3,
+   "swp": 3,
+   "hours": 12,
+   "band": [
+    5,
+    12
+   ],
+   "constraint": "",
+   "flags": [],
+   "ratio": 4.0
+  },
+  {
+   "id": "I-0603-2",
+   "epic": "EP-06",
+   "title": "Test 10 ví dụ biên + phiên bản theo ngày",
+   "role": "QA",
+   "s": 2,
+   "c": 2,
+   "matrix": 2,
+   "swp": 2,
+   "hours": 6,
+   "band": [
+    3,
+    8
+   ],
+   "constraint": "",
+   "flags": [],
+   "ratio": 3.0
+  },
+  {
+   "id": "I-0701-1",
+   "epic": "EP-07",
+   "title": "Bảng bộ quy tắc + nạp 12 giá trị + CHECK",
+   "role": "DB",
+   "s": 2,
+   "c": 2,
+   "matrix": 2,
+   "swp": 2,
+   "hours": 6,
+   "band": [
+    3,
+    8
+   ],
+   "constraint": "Giờ lái 2024",
+   "flags": [],
+   "ratio": 3.0
+  },
+  {
+   "id": "I-0701-2",
+   "epic": "EP-07",
+   "title": "Đối chiếu 12 giá trị với cổng MHLW, ghi nguồn",
+   "role": "BA",
+   "s": 1,
+   "c": 2,
+   "matrix": 1,
+   "swp": 1,
+   "hours": 3,
+   "band": [
+    2,
+    5
+   ],
+   "constraint": "Giờ lái 2024",
+   "flags": [],
+   "ratio": 3.0
+  },
+  {
+   "id": "I-0702-1",
+   "epic": "EP-07",
+   "title": "Dựng ca từ đoạn có kiểu + H-03/H-04",
+   "role": "BE",
+   "s": 1,
+   "c": 3,
+   "matrix": 2,
+   "swp": 2,
+   "hours": 6,
+   "band": [
+    3,
+    8
+   ],
+   "constraint": "Giờ lái 2024",
+   "flags": [
+    "RANG_BUOC"
+   ],
+   "ratio": 3.0,
+   "review": {
+    "final": 2,
+    "hours": null,
+    "reason": "Giữ. Dựng ca chỉ là min/max của các đoạn đã có kiểu."
+   }
+  },
+  {
+   "id": "I-0702-2",
+   "epic": "EP-07",
+   "title": "Đếm ngày > 14 h theo tuần JST (H-05)",
+   "role": "BE",
+   "s": 1,
+   "c": 3,
+   "matrix": 2,
+   "swp": 2,
+   "hours": 5,
+   "band": [
+    3,
+    8
+   ],
+   "constraint": "Giờ lái 2024",
+   "flags": [
+    "RANG_BUOC"
+   ],
+   "ratio": 2.5,
+   "review": {
+    "final": 2,
+    "hours": null,
+    "reason": "Giữ. Tuần JST bắt đầu thứ Hai đã chốt ở PM-10."
+   }
+  },
+  {
+   "id": "I-0703",
+   "epic": "EP-07",
+   "title": "Tính `rest_before` từ ca trước (H-06/H-07)",
+   "role": "BE",
+   "s": 1,
+   "c": 2,
+   "matrix": 1,
+   "swp": 1,
+   "hours": 4,
+   "band": [
+    2,
+    5
+   ],
+   "constraint": "Giờ lái 2024",
+   "flags": [],
+   "ratio": 4.0
+  },
+  {
+   "id": "I-0704-1",
+   "epic": "EP-07",
+   "title": "Thuật toán `drive_since_break` + nhóm BREAK đạt chuẩn",
+   "role": "BE",
+   "s": 1,
+   "c": 4,
+   "matrix": 3,
+   "swp": 3,
+   "hours": 10,
+   "band": [
+    5,
+    12
+   ],
+   "constraint": "Giờ lái 2024",
+   "flags": [
+    "C4",
+    "RANG_BUOC"
+   ],
+   "ratio": 3.3,
+   "review": {
+    "final": 3,
+    "hours": 10,
+    "reason": "Giữ 3 SWP nhưng tăng 8 → 10 h: ví dụ 8 có quãng nghỉ 10 phút không đạt chuẩn, và nhóm BREAK phải hoàn tất trước mốc 4 h. Cần thêm thời gian cho ca biên."
+   }
+  },
+  {
+   "id": "I-0704-2",
+   "epic": "EP-07",
+   "title": "Trả khoảng vi phạm chính xác (mốc vượt 4 h)",
+   "role": "BE",
+   "s": 1,
+   "c": 3,
+   "matrix": 2,
+   "swp": 2,
+   "hours": 5,
+   "band": [
+    3,
+    8
+   ],
+   "constraint": "Giờ lái 2024",
+   "flags": [
+    "RANG_BUOC"
+   ],
+   "ratio": 2.5,
+   "review": {
+    "final": 2,
+    "hours": null,
+    "reason": "Giữ. Thời điểm vượt mốc là phụ phẩm của thuật toán ở I-0704-1."
+   }
+  },
+  {
+   "id": "I-0705-1",
+   "epic": "EP-07",
+   "title": "Tổng lái theo ngày từ lịch sử + tuyến, trung bình 2 ngày (H-08)",
+   "role": "BE",
+   "s": 2,
+   "c": 3,
+   "matrix": 3,
+   "swp": 3,
+   "hours": 8,
+   "band": [
+    5,
+    12
+   ],
+   "constraint": "Giờ lái 2024",
+   "flags": [
+    "RANG_BUOC"
+   ],
+   "ratio": 2.7,
+   "review": {
+    "final": 3,
+    "hours": 8,
+    "reason": "Giữ 3 SWP, tăng 6 → 8 h: 6 h nằm sát đáy khung và còn phụ thuộc quy ước ca qua nửa đêm (I-0904, PREMISE.md A-01)."
+   }
+  },
+  {
+   "id": "I-0705-2",
+   "epic": "EP-07",
+   "title": "Cửa sổ 2 tuần dương lịch (H-09)",
+   "role": "BE",
+   "s": 1,
+   "c": 3,
+   "matrix": 2,
+   "swp": 2,
+   "hours": 5,
+   "band": [
+    3,
+    8
+   ],
+   "constraint": "Giờ lái 2024",
+   "flags": [
+    "RANG_BUOC"
+   ],
+   "ratio": 2.5,
+   "review": {
+    "final": 2,
+    "hours": null,
+    "reason": "Giữ. Logic giống H-08 nhưng cửa sổ 2 tuần."
+   }
+  },
+  {
+   "id": "I-0706-1",
+   "epic": "EP-07",
+   "title": "Tổng tháng/năm, trần theo thỏa thuận, đếm 6 tháng và 3 tháng liên tiếp",
+   "role": "BE",
+   "s": 2,
+   "c": 4,
+   "matrix": 5,
+   "swp": 5,
+   "hours": 12,
+   "band": [
+    8,
+    16
+   ],
+   "constraint": "Giờ lái 2024",
+   "flags": [
+    "C4",
+    "RANG_BUOC"
+   ],
+   "ratio": 2.4,
+   "review": {
+    "final": 5,
+    "hours": 12,
+    "reason": "Giữ 5 SWP, tăng 10 → 12 h: ngoài tổng tháng/năm còn phải đếm số tháng vượt 284 h (≤ 6/năm, ≤ 3 liên tiếp), là phần bổ sung vào spec (PREMISE.md B-01)."
+   }
+  },
+  {
+   "id": "I-0706-2",
+   "epic": "EP-07",
+   "title": "H-12 làm thêm 960 h từ số liệu HR",
+   "role": "BE",
+   "s": 1,
+   "c": 2,
+   "matrix": 1,
+   "swp": 1,
+   "hours": 3,
+   "band": [
+    2,
+    5
+   ],
+   "constraint": "Giờ lái 2024",
+   "flags": [],
+   "ratio": 3.0
+  },
+  {
+   "id": "I-0707-1",
+   "epic": "EP-07",
+   "title": "13 ví dụ driver-hours.md thành unit test",
+   "role": "QA",
+   "s": 1,
+   "c": 2,
+   "matrix": 1,
+   "swp": 1,
+   "hours": 5,
+   "band": [
+    2,
+    5
+   ],
+   "constraint": "Giờ lái 2024",
+   "flags": [],
+   "ratio": 5.0
+  },
+  {
+   "id": "I-0707-2",
+   "epic": "EP-07",
+   "title": "Ca biên: 4 h 00, nghỉ 9 h 00, qua nửa đêm, 3 tháng liên tiếp",
+   "role": "QA",
+   "s": 2,
+   "c": 3,
+   "matrix": 3,
+   "swp": 3,
+   "hours": 8,
+   "band": [
+    5,
+    12
+   ],
+   "constraint": "Giờ lái 2024",
+   "flags": [
+    "RANG_BUOC"
+   ],
+   "ratio": 2.7,
+   "review": {
+    "final": 3,
+    "hours": null,
+    "reason": "Giữ. Ca biên phải đối chiếu tay với cổng MHLW."
+   }
+  },
+  {
+   "id": "I-0708-1",
+   "epic": "EP-07",
+   "title": "API-DR-01…04",
+   "role": "BE",
+   "s": 2,
+   "c": 3,
+   "matrix": 3,
+   "swp": 3,
+   "hours": 8,
+   "band": [
+    5,
+    12
+   ],
+   "constraint": "Giờ lái 2024",
+   "flags": [
+    "RANG_BUOC"
+   ],
+   "ratio": 2.7,
+   "review": {
+    "final": 3,
+    "hours": null,
+    "reason": "Giữ. Vòng đời giống API-TP nên dùng lại được mẫu."
+   }
+  },
+  {
+   "id": "I-0708-2",
+   "epic": "EP-07",
+   "title": "Màn DRIVER_RULESET",
+   "role": "FE",
+   "s": 3,
+   "c": 2,
+   "matrix": 3,
+   "swp": 3,
+   "hours": 10,
+   "band": [
+    5,
+    12
+   ],
+   "constraint": "Giờ lái 2024",
+   "flags": [],
+   "ratio": 3.3
+  },
+  {
+   "id": "I-0709-1",
+   "epic": "EP-07",
+   "title": "Bảng hỏi kèm ví dụ cho pháp chế Yuki",
+   "role": "BA",
+   "s": 1,
+   "c": 2,
+   "matrix": 1,
+   "swp": 1,
+   "hours": 3,
+   "band": [
+    2,
+    5
+   ],
+   "constraint": "Giờ lái 2024",
+   "flags": [],
+   "ratio": 3.0
+  },
+  {
+   "id": "I-0709-2",
+   "epic": "EP-07",
+   "title": "Họp xác nhận, cập nhật PM-08 và bộ quy tắc theo trả lời",
+   "role": "TL",
+   "s": 2,
+   "c": 2,
+   "matrix": 2,
+   "swp": 2,
+   "hours": 4,
+   "band": [
+    3,
+    8
+   ],
+   "constraint": "Giờ lái 2024",
+   "flags": [],
+   "ratio": 2.0
+  },
+  {
+   "id": "I-0801",
+   "epic": "EP-08",
+   "title": "Migration 7 bảng tuyến + RLS PLANNER/DRIVER",
+   "role": "DB",
+   "s": 2,
+   "c": 3,
+   "matrix": 3,
+   "swp": 3,
+   "hours": 10,
+   "band": [
+    5,
+    12
+   ],
+   "constraint": "Giờ lái 2024",
+   "flags": [
+    "RANG_BUOC"
+   ],
+   "ratio": 3.3,
+   "review": {
+    "final": 3,
+    "hours": null,
+    "reason": "Giữ. 7 bảng nhưng cấu trúc đã có ở table-definitions.md; phần khó là RLS cho DRIVER."
+   }
+  },
+  {
+   "id": "I-0802-1",
+   "epic": "EP-08",
+   "title": "API-RT-01/02/03",
+   "role": "BE",
+   "s": 2,
+   "c": 2,
+   "matrix": 2,
+   "swp": 2,
+   "hours": 8,
+   "band": [
+    3,
+    8
+   ],
+   "constraint": "Giờ lái 2024",
+   "flags": [],
+   "ratio": 4.0
+  },
+  {
+   "id": "I-0802-2",
+   "epic": "EP-08",
+   "title": "API-RT-04 lưu phiên bản nháp, kiểm đoạn chồng lấn",
+   "role": "BE",
+   "s": 2,
+   "c": 3,
+   "matrix": 3,
+   "swp": 3,
+   "hours": 8,
+   "band": [
+    5,
+    12
+   ],
+   "constraint": "Giờ lái 2024",
+   "flags": [
+    "RANG_BUOC"
+   ],
+   "ratio": 2.7,
+   "review": {
+    "final": 3,
+    "hours": null,
+    "reason": "Giữ. Kiểm đoạn chồng lấn là ràng buộc exclusion trong DB."
+   }
+  },
+  {
+   "id": "I-0803-1",
+   "epic": "EP-08",
+   "title": "Interface adapter + bản giả lập + nhập tay + cache",
+   "role": "BE",
+   "s": 2,
+   "c": 3,
+   "matrix": 3,
+   "swp": 3,
+   "hours": 8,
+   "band": [
+    5,
+    12
+   ],
+   "constraint": "Giờ lái 2024",
+   "flags": [
+    "RANG_BUOC"
+   ],
+   "ratio": 2.7,
+   "review": {
+    "final": 3,
+    "hours": null,
+    "reason": "Giữ. Nhập tay khi lỗi là đường chính cho tới khi có Q-23."
+   }
+  },
+  {
+   "id": "I-0803-2",
+   "epic": "EP-08",
+   "title": "Adapter nhà cung cấp bản đồ: thời gian chạy xe tải theo đoạn (chờ Q-23)",
+   "role": "BE",
+   "s": 2,
+   "c": 3,
+   "matrix": 3,
+   "swp": 3,
+   "hours": 6,
+   "band": [
+    5,
+    12
+   ],
+   "constraint": "Giờ lái 2024",
+   "flags": [
+    "RANG_BUOC"
+   ],
+   "ratio": 2.0,
+   "review": {
+    "final": 3,
+    "hours": null,
+    "reason": "Phần tách từ task cũ. Giữ 3: một adapter, nhiều nhánh lỗi/timeout."
+   }
+  },
+  {
+   "id": "I-0803-3",
+   "epic": "EP-08",
+   "title": "Kiểm thử adapter với sandbox nhà cung cấp: timeout, cache (chờ Q-23)",
+   "role": "QA",
+   "s": 2,
+   "c": 2,
+   "matrix": 2,
+   "swp": 2,
+   "hours": 4,
+   "band": [
+    3,
+    8
+   ],
+   "constraint": "Giờ lái 2024",
+   "flags": [],
+   "ratio": 2.0
+  },
+  {
+   "id": "I-0804-1",
+   "epic": "EP-08",
+   "title": "API-RT-05 lưu kết quả và vi phạm",
+   "role": "BE",
+   "s": 2,
+   "c": 2,
+   "matrix": 2,
+   "swp": 2,
+   "hours": 6,
+   "band": [
+    3,
+    8
+   ],
+   "constraint": "Giờ lái 2024",
+   "flags": [],
+   "ratio": 3.0
+  },
+  {
+   "id": "I-0804-2",
+   "epic": "EP-08",
+   "title": "Thuật toán gợi ý điểm nghỉ (API-RT-06)",
+   "role": "BE",
+   "s": 1,
+   "c": 4,
+   "matrix": 3,
+   "swp": 3,
+   "hours": 8,
+   "band": [
+    5,
+    12
+   ],
+   "constraint": "Giờ lái 2024",
+   "flags": [
+    "C4",
+    "RANG_BUOC"
+   ],
+   "ratio": 2.7,
+   "review": {
+    "final": 3,
+    "hours": null,
+    "reason": "Giữ. Spec yêu cầu gợi ý tại điểm dừng hoặc vị trí nghỉ nhưng không có dữ liệu vị trí nghỉ, nên chỉ gợi ý tại điểm dừng của tuyến (giả định PREMISE.md A-02). Phạm vi vẫn là S1."
+   }
+  },
+  {
+   "id": "I-0805-1",
+   "epic": "EP-08",
+   "title": "Hàm công bố nguyên tử + upsert `driver_duty_days`",
+   "role": "BE",
+   "s": 2,
+   "c": 3,
+   "matrix": 3,
+   "swp": 3,
+   "hours": 8,
+   "band": [
+    5,
+    12
+   ],
+   "constraint": "Giờ lái 2024",
+   "flags": [
+    "RANG_BUOC"
+   ],
+   "ratio": 2.7,
+   "review": {
+    "final": 3,
+    "hours": null,
+    "reason": "Giữ. Giao dịch nguyên tử giống mẫu publish."
+   }
+  },
+  {
+   "id": "I-0805-2",
+   "epic": "EP-08",
+   "title": "Test không đánh giá lại khi đổi bộ quy tắc",
+   "role": "QA",
+   "s": 1,
+   "c": 2,
+   "matrix": 1,
+   "swp": 1,
+   "hours": 3,
+   "band": [
+    2,
+    5
+   ],
+   "constraint": "Giờ lái 2024",
+   "flags": [],
+   "ratio": 3.0
+  },
+  {
+   "id": "I-0806",
+   "epic": "EP-08",
+   "title": "Ghi sự kiện khẩn cấp + loại trừ có phạm vi",
+   "role": "BE",
+   "s": 2,
+   "c": 3,
+   "matrix": 3,
+   "swp": 3,
+   "hours": 8,
+   "band": [
+    5,
+    12
+   ],
+   "constraint": "Giờ lái 2024",
+   "flags": [
+    "RANG_BUOC"
+   ],
+   "ratio": 2.7,
+   "review": {
+    "final": 3,
+    "hours": null,
+    "reason": "Giữ. Phạm vi loại trừ chỉ 3 phép kiểm, đã định nghĩa ở driver-hours.md §5."
+   }
+  },
+  {
+   "id": "I-0807",
+   "epic": "EP-08",
+   "title": "ROUTE_LIST theo ngày/tài xế",
+   "role": "FE",
+   "s": 2,
+   "c": 1,
+   "matrix": 1,
+   "swp": 1,
+   "hours": 5,
+   "band": [
+    2,
+    5
+   ],
+   "constraint": "Giờ lái 2024",
+   "flags": [],
+   "ratio": 5.0
+  },
+  {
+   "id": "I-0808-1",
+   "epic": "EP-08",
+   "title": "Trình sửa các đoạn có kiểu",
+   "role": "FE",
+   "s": 3,
+   "c": 3,
+   "matrix": 5,
+   "swp": 5,
+   "hours": 14,
+   "band": [
+    8,
+    16
+   ],
+   "constraint": "Giờ lái 2024",
+   "flags": [
+    "RANG_BUOC"
+   ],
+   "ratio": 2.8,
+   "review": {
+    "final": 5,
+    "hours": null,
+    "reason": "Giữ. Trình sửa đoạn có kéo thả và kiểm tức thời là phần FE lớn nhất của dự án."
+   }
+  },
+  {
+   "id": "I-0808-2",
+   "epic": "EP-08",
+   "title": "Timeline tô khoảng vi phạm + gợi ý nghỉ",
+   "role": "FE",
+   "s": 3,
+   "c": 3,
+   "matrix": 5,
+   "swp": 5,
+   "hours": 12,
+   "band": [
+    8,
+    16
+   ],
+   "constraint": "Giờ lái 2024",
+   "flags": [
+    "RANG_BUOC"
+   ],
+   "ratio": 2.4,
+   "review": {
+    "final": 5,
+    "hours": null,
+    "reason": "Giữ. Tô khoảng vi phạm chính xác tới phút trên timeline."
+   }
+  },
+  {
+   "id": "I-0808-3",
+   "epic": "EP-08",
+   "title": "Chế độ xem đơn giản cho DRIVER",
+   "role": "FE",
+   "s": 2,
+   "c": 1,
+   "matrix": 1,
+   "swp": 1,
+   "hours": 4,
+   "band": [
+    2,
+    5
+   ],
+   "constraint": "Giờ lái 2024",
+   "flags": [],
+   "ratio": 4.0
+  },
+  {
+   "id": "I-0808-4",
+   "epic": "EP-08",
+   "title": "E2E lập → kiểm → công bố tuyến",
+   "role": "QA",
+   "s": 3,
+   "c": 2,
+   "matrix": 3,
+   "swp": 3,
+   "hours": 8,
+   "band": [
+    5,
+    12
+   ],
+   "constraint": "Giờ lái 2024",
+   "flags": [],
+   "ratio": 2.7
+  },
+  {
+   "id": "I-0901-1",
+   "epic": "EP-09",
+   "title": "Bảng `drivers` / `vehicles` + RLS",
+   "role": "DB",
+   "s": 1,
+   "c": 2,
+   "matrix": 1,
+   "swp": 1,
+   "hours": 3,
+   "band": [
+    2,
+    5
+   ],
+   "constraint": "Giờ lái 2024",
+   "flags": [],
+   "ratio": 3.0
+  },
+  {
+   "id": "I-0901-2",
+   "epic": "EP-09",
+   "title": "Nạp CSV tài xế/xe/cờ thỏa thuận + kiểm tra",
+   "role": "BE",
+   "s": 2,
+   "c": 2,
+   "matrix": 2,
+   "swp": 2,
+   "hours": 6,
+   "band": [
+    3,
+    8
+   ],
+   "constraint": "Giờ lái 2024",
+   "flags": [],
+   "ratio": 3.0
+  },
+  {
+   "id": "I-0902-1",
+   "epic": "EP-09",
+   "title": "API nạp CSV `driver_duty_days`, kiểm trùng với ROUTE",
+   "role": "BE",
+   "s": 2,
+   "c": 3,
+   "matrix": 3,
+   "swp": 3,
+   "hours": 8,
+   "band": [
+    5,
+    12
+   ],
+   "constraint": "Giờ lái 2024",
+   "flags": [
+    "RANG_BUOC"
+   ],
+   "ratio": 2.7,
+   "review": {
+    "final": 3,
+    "hours": null,
+    "reason": "Giữ. Kiểm trùng IMPORT/ROUTE theo ngày là nhánh chính."
+   }
+  },
+  {
+   "id": "I-0902-2",
+   "epic": "EP-09",
+   "title": "Test lịch sử qua ranh giới tuần/tháng",
+   "role": "QA",
+   "s": 1,
+   "c": 2,
+   "matrix": 1,
+   "swp": 1,
+   "hours": 4,
+   "band": [
+    2,
+    5
+   ],
+   "constraint": "Giờ lái 2024",
+   "flags": [],
+   "ratio": 4.0
+  },
+  {
+   "id": "I-0903",
+   "epic": "EP-09",
+   "title": "Endpoint cập nhật `overtime_ytd_h` có audit",
+   "role": "BE",
+   "s": 1,
+   "c": 2,
+   "matrix": 1,
+   "swp": 1,
+   "hours": 3,
+   "band": [
+    2,
+    5
+   ],
+   "constraint": "Giờ lái 2024",
+   "flags": [],
+   "ratio": 3.0
+  },
+  {
+   "id": "I-0904",
+   "epic": "EP-09",
+   "title": "Đề xuất quy ước kèm ví dụ, gửi hỏi Yuki",
+   "role": "BA",
+   "s": 1,
+   "c": 3,
+   "matrix": 2,
+   "swp": 1,
+   "hours": 4,
+   "band": [
+    3,
+    8
+   ],
+   "constraint": "Giờ lái 2024",
+   "flags": [
+    "LECH",
+    "RANG_BUOC"
+   ],
+   "ratio": 4.0,
+   "review": {
+    "final": 1,
+    "hours": null,
+    "reason": "Hạ 2 → 1. Task chỉ soạn câu hỏi và ví dụ. Độ khó C3 của quy định thuộc phần cài đặt sau khi có trả lời (I-0705-1, I-0707-2), không thuộc task này. Giữ S/C như cũ để vết lệch hiện trên báo cáo."
+   }
+  },
+  {
+   "id": "I-1001-1",
+   "epic": "EP-10",
+   "title": "Dựng project Tokyo, biến môi trường, secret",
+   "role": "OPS",
+   "s": 2,
+   "c": 2,
+   "matrix": 2,
+   "swp": 2,
+   "hours": 6,
+   "band": [
+    3,
+    8
+   ],
+   "constraint": "",
+   "flags": [
+    "NGAU_NHIEN"
+   ],
+   "ratio": 3.0,
+   "review": {
+    "final": 2,
+    "hours": null,
+    "reason": "Giữ (mẫu ngẫu nhiên)."
+   }
+  },
+  {
+   "id": "I-1001-2",
+   "epic": "EP-10",
+   "title": "GitHub Actions: lint, typecheck, unit, pgTAP",
+   "role": "OPS",
+   "s": 2,
+   "c": 2,
+   "matrix": 2,
+   "swp": 2,
+   "hours": 6,
+   "band": [
+    3,
+    8
+   ],
+   "constraint": "",
+   "flags": [],
+   "ratio": 3.0
+  },
+  {
+   "id": "I-1002",
+   "epic": "EP-10",
+   "title": "Bật PITR + diễn tập khôi phục + runbook",
+   "role": "OPS",
+   "s": 2,
+   "c": 2,
+   "matrix": 2,
+   "swp": 2,
+   "hours": 5,
+   "band": [
+    3,
+    8
+   ],
+   "constraint": "",
+   "flags": [],
+   "ratio": 2.5
+  },
+  {
+   "id": "I-1003",
+   "epic": "EP-10",
+   "title": "Kịch bản k6 cho phân bổ và kiểm tra tuyến",
+   "role": "QA",
+   "s": 2,
+   "c": 3,
+   "matrix": 3,
+   "swp": 3,
+   "hours": 8,
+   "band": [
+    5,
+    12
+   ],
+   "constraint": "",
+   "flags": [],
+   "ratio": 2.7
+  },
+  {
+   "id": "I-1004",
+   "epic": "EP-10",
+   "title": "Playwright luồng nhập → xuất → POD → đảo hạn",
+   "role": "QA",
+   "s": 4,
+   "c": 2,
+   "matrix": 5,
+   "swp": 5,
+   "hours": 12,
+   "band": [
+    8,
+    16
+   ],
+   "constraint": "",
+   "flags": [],
+   "ratio": 2.4
+  },
+  {
+   "id": "I-1005",
+   "epic": "EP-10",
+   "title": "Khung i18n + tách chuỗi 18 màn",
+   "role": "FE",
+   "s": 4,
+   "c": 1,
+   "matrix": 3,
+   "swp": 3,
+   "hours": 10,
+   "band": [
+    5,
+    12
+   ],
+   "constraint": "",
+   "flags": [],
+   "ratio": 3.3
+  }
+ ]
+}

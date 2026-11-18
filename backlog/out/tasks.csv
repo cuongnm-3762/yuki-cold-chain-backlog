@@ -1,0 +1,155 @@
+﻿Cấp,ID,Cha,Epic,Tiêu đề,Vai trò,Scope (S),Complexity (C),SWP,Giờ ước lượng,Iteration,Phụ trách (giả định),Trạng thái,Giờ thực tế,Ràng buộc đặc thù,Spec
+Epic,EP-01,,EP-01,"Nền tảng: phân quyền, RLS, audit, mã lỗi",,,,39,127,,,,,,system/security/rbac.md · system/api-contracts/error-codes.md · requirements/app/common · ADR-0005 · GAP-01/03/06/10
+Issue,I-0101,EP-01,EP-01,"Vai trò trong claim JWT, `user_roles`, API-CM-05 `/api/me`",,,,10,30,Sprint 1,,Done,31,,rbac.md §3 · ADR-0005 · API-CM-05
+Sub-issue,I-0101-1,I-0101,EP-01,Bảng `user_roles` + hook đưa vai trò vào claim JWT,DB,2,3,3,8,Sprint 1,An,Done,9,,rbac.md §3 · ADR-0005 · API-CM-05
+Sub-issue,I-0101-2,I-0101,EP-01,`requireRole` đọc claim + API-CM-05 `/api/me`,BE,2,2,2,6,Sprint 1,An,Done,6,,rbac.md §3 · ADR-0005 · API-CM-05
+Sub-issue,I-0101-3,I-0101,EP-01,Menu và nút lọc theo vai trò (ma trận 18 màn × 9 vai trò),FE,2,2,2,8,Sprint 1,Chi,Done,8,,rbac.md §3 · ADR-0005 · API-CM-05
+Sub-issue,I-0101-4,I-0101,EP-01,"Test ma trận quyền 9 vai trò × 18 màn (menu ẩn, URL trả E09002)",QA,3,2,3,8,Sprint 1,Hà,Done,8,,rbac.md §3 · ADR-0005 · API-CM-05
+Issue,I-0102,EP-01,EP-01,RLS theo vai trò cho 17 bảng hiện có (thay `using (true)`),,,,10,34,Sprint 1,,In Progress,38,,rbac.md §3 lớp 1 · GAP-01 · erd.md §3 #2
+Sub-issue,I-0102-1,I-0102,EP-01,"Policy RLS nhóm nhập hàng, tồn kho, lô, sai lệch",DB,2,3,3,10,Sprint 1,Bình,Done,12,,rbac.md §3 lớp 1 · GAP-01 · erd.md §3 #2
+Sub-issue,I-0102-2,I-0102,EP-01,"Policy RLS nhóm đơn hàng, cảnh báo, lịch sử, danh mục",DB,2,3,3,10,Sprint 1,Bình,Done,13,,rbac.md §3 lớp 1 · GAP-01 · erd.md §3 #2
+Sub-issue,I-0102-3,I-0102,EP-01,Tách FK `skus.temp_band → temp_policies` trước khi bật RLS (phát sinh),DB,1,2,1,4,Sprint 1,Bình,Done,4,,rbac.md §3 lớp 1 · GAP-01 · erd.md §3 #2
+Sub-issue,I-0102-4,I-0102,EP-01,Bộ test RLS (pgTAP) với JWT giả cho 9 vai trò,QA,2,3,3,10,Sprint 1,Hà,In Progress,9,,rbac.md §3 lớp 1 · GAP-01 · erd.md §3 #2
+Issue,I-0103,EP-01,EP-01,Audit: `actor` lấy từ `auth.uid()` trong trigger,,,,4,12,Sprint 1,,Done,11,,rbac.md §3 · NFR-AUD-01 · GAP-03
+Sub-issue,I-0103-1,I-0103,EP-01,"Trigger gán actor từ `auth.uid()`, thu hồi quyền insert trực tiếp",DB,2,2,2,6,Sprint 1,An,Done,6,,rbac.md §3 · NFR-AUD-01 · GAP-03
+Sub-issue,I-0103-2,I-0103,EP-01,Bỏ tham số actor ở mọi call site,BE,2,1,1,3,Sprint 1,An,Done,3,,rbac.md §3 · NFR-AUD-01 · GAP-03
+Sub-issue,I-0103-3,I-0103,EP-01,Test lặp lại kịch bản giả mạo actor (SPOOF_TEST),QA,1,2,1,3,Sprint 1,Hà,Done,2,,rbac.md §3 · NFR-AUD-01 · GAP-03
+Issue,I-0104,EP-01,EP-01,Danh mục mã lỗi và mã lý do chặn `BLK-*` / `SH-*`,,,,6,19,Sprint 1,,Done,20,,error-codes.md · PREMISE(LAB-4) B-6 · GAP-06
+Sub-issue,I-0104-1,I-0104,EP-01,"Mô-đun `errors.ts`, định dạng lỗi chuẩn, ánh xạ 67 mã",BE,2,2,2,8,Sprint 1,Bình,Done,9,,error-codes.md · PREMISE(LAB-4) B-6 · GAP-06
+Sub-issue,I-0104-2,I-0104,EP-01,Danh mục thông điệp và component hiển thị lỗi,FE,2,2,2,6,Sprint 1,Dũng,Done,6,,error-codes.md · PREMISE(LAB-4) B-6 · GAP-06
+Sub-issue,I-0104-3,I-0104,EP-01,Cột `block_reason_code` + chuyển dữ liệu văn bản cũ,DB,2,2,2,5,Sprint 1,Bình,Done,5,,error-codes.md · PREMISE(LAB-4) B-6 · GAP-06
+Issue,I-0105,EP-01,EP-01,AUTH_LOGIN và phiên làm việc,,,,2,9,Sprint 1,,Done,9,,requirements/app/common/AUTH_LOGIN_SPEC.md · SYS-CM-01
+Sub-issue,I-0105-1,I-0105,EP-01,Màn AUTH_LOGIN đủ trạng thái theo spec,FE,2,1,1,5,Sprint 1,Dũng,Done,5,,requirements/app/common/AUTH_LOGIN_SPEC.md · SYS-CM-01
+Sub-issue,I-0105-2,I-0105,EP-01,Phiên ngắn và tự đăng xuất,BE,1,2,1,4,Sprint 1,An,Done,4,,requirements/app/common/AUTH_LOGIN_SPEC.md · SYS-CM-01
+Issue,I-0106,EP-01,EP-01,"DASHBOARD, MASTER_VIEW, AUDIT_LOG theo spec",,,,4,17,Sprint 1,,In Progress,17,,"requirements/app/common/{DASHBOARD,MASTER_VIEW,AUDIT_LOG}_SPEC.md"
+Sub-issue,I-0106-1,I-0106,EP-01,DASHBOARD: bộ đếm theo vai trò,FE,2,1,1,5,Sprint 1,Chi,Done,5,,"requirements/app/common/{DASHBOARD,MASTER_VIEW,AUDIT_LOG}_SPEC.md"
+Sub-issue,I-0106-2,I-0106,EP-01,MASTER_VIEW chỉ xem,FE,2,1,1,4,Sprint 1,Dũng,Done,4,,"requirements/app/common/{DASHBOARD,MASTER_VIEW,AUDIT_LOG}_SPEC.md"
+Sub-issue,I-0106-3,I-0106,EP-01,"AUDIT_LOG: lọc, tìm, phân trang",FE,2,2,2,8,Sprint 1,Chi,In Review,8,,"requirements/app/common/{DASHBOARD,MASTER_VIEW,AUDIT_LOG}_SPEC.md"
+Issue,I-0107,EP-01,EP-01,Loại `POST /api/demo/reset` khỏi bản build production,OPS,1,1,1,2,Sprint 1,Minh,Done,2,,API-CM-04 · GAP-10
+Issue,I-0108,EP-01,EP-01,[Làm rõ] SYS-ER-01: các mã lỗi đang mượn,TL,2,2,2,4,Sprint 1,Khoa,Done,5,,open-questions.md SYS-ER-01
+Epic,EP-02,,EP-02,Kiểm nhập,,,,19,62,,,,,,requirements/app/inbound-inspection · system/rules/temperature-bands.md
+Issue,I-0201,EP-02,EP-02,Hàm quy tắc nhiệt T-02/T-03 theo phiên bản chính sách,BE,1,2,1,5,Sprint 1,Khoa,Done,5,,"temperature-bands.md T-02, T-03 · ADR-0003"
+Issue,I-0202,EP-02,EP-02,API-IN-03 ghi nguyên tử và idempotent,,,,8,22,Sprint 2,,Todo,,,inbound-inspection/api-design.md API-IN-03 · sequence-backend.md
+Sub-issue,I-0202-1,I-0202,EP-02,Hàm `submit_inspection` (plpgsql) nguyên tử,DB,2,3,3,10,Sprint 2,Bình,Todo,,,inbound-inspection/api-design.md API-IN-03 · sequence-backend.md
+Sub-issue,I-0202-2,I-0202,EP-02,"Route handler gọi RPC, kiểm đầu vào, ánh xạ mã lỗi",BE,2,2,2,6,Sprint 2,Bình,Todo,,,inbound-inspection/api-design.md API-IN-03 · sequence-backend.md
+Sub-issue,I-0202-3,I-0202,EP-02,Test gửi đồng thời và gửi lặp,QA,2,3,3,6,Sprint 2,Hà,Todo,,,inbound-inspection/api-design.md API-IN-03 · sequence-backend.md
+Issue,I-0203,EP-02,EP-02,"Làn truy xuất (gạo, bò 10 chữ số) và cách ly khi lỗi truy xuất",,,,3,9,Sprint 2,,Todo,,,INBOUND_INSPECTION_SPEC.md · E01107/E01108
+Sub-issue,I-0203-1,I-0203,EP-02,Kiểm tra làn truy xuất E01107/E01108,BE,1,2,1,4,Sprint 2,An,Todo,,,INBOUND_INSPECTION_SPEC.md · E01107/E01108
+Sub-issue,I-0203-2,I-0203,EP-02,Trường động theo làn truy xuất,FE,2,2,2,5,Sprint 2,Dũng,Todo,,,INBOUND_INSPECTION_SPEC.md · E01107/E01108
+Issue,I-0204,EP-02,EP-02,Màn INBOUND_LIST,FE,2,1,1,5,Sprint 1,Dũng,Done,5,,INBOUND_LIST_SPEC.md · API-IN-01
+Issue,I-0205,EP-02,EP-02,Màn INBOUND_INSPECTION,,,,6,21,Sprint 1,,In Progress,12,,INBOUND_INSPECTION_SPEC.md · event.md · NFR-ACC-01
+Sub-issue,I-0205-1,I-0205,EP-02,Form kiểm nhập + đánh giá trực tiếp + trạng thái cách ly,FE,3,2,3,12,Sprint 1,Dũng,Done,12,,INBOUND_INSPECTION_SPEC.md · event.md · NFR-ACC-01
+Sub-issue,I-0205-2,I-0205,EP-02,"Tối ưu máy tính bảng (vùng chạm, bàn phím số)",FE,1,1,1,3,Sprint 2,Chi,Todo,,,INBOUND_INSPECTION_SPEC.md · event.md · NFR-ACC-01
+Sub-issue,I-0205-3,I-0205,EP-02,Test màn hình theo event.md,QA,2,2,2,6,Sprint 2,Hà,Todo,,,INBOUND_INSPECTION_SPEC.md · event.md · NFR-ACC-01
+Epic,EP-03,,EP-03,Phân bổ lô và kiểm xuất,,,,32,101,,,,,,requirements/app/outbound-allocation-shipping · system/rules/allocation-chain.md
+Issue,I-0301,EP-03,EP-03,"Sổ cái tồn kho: `qty_on_hand` / `qty_reserved`, `inventory_movements`, `lot_reservations`",,,,6,20,Sprint 2,,Todo,,,PREMISE(LAB-4) B-4 · table-definitions.md · GAP-05
+Sub-issue,I-0301-1,I-0301,EP-03,Migration sổ cái + chuyển dữ liệu `qty_available`,DB,2,3,3,10,Sprint 2,Bình,Todo,,,PREMISE(LAB-4) B-4 · table-definitions.md · GAP-05
+Sub-issue,I-0301-2,I-0301,EP-03,Hàm `allocate_lot` / `release_lot` với `for update`,DB,2,3,3,10,Sprint 2,Bình,Todo,,,PREMISE(LAB-4) B-4 · table-definitions.md · GAP-05
+Issue,I-0302,EP-03,EP-03,Chuỗi phân bổ Rule A-01…A-08 và tách lô,,,,7,23,Sprint 2,,Todo,,,allocation-chain.md · PM-14 · SYS-AL-01
+Sub-issue,I-0302-1,I-0302,EP-03,`evaluateLot` 7 bước + bằng chứng từng lô,BE,2,3,3,10,Sprint 2,An,Todo,,,allocation-chain.md · PM-14 · SYS-AL-01
+Sub-issue,I-0302-2,I-0302,EP-03,Tách nhiều lô FEFO/FIFO,BE,2,3,3,8,Sprint 2,An,Todo,,,allocation-chain.md · PM-14 · SYS-AL-01
+Sub-issue,I-0302-3,I-0302,EP-03,Ví dụ allocation-chain thành unit test,QA,1,2,1,5,Sprint 2,Hà,Todo,,,allocation-chain.md · PM-14 · SYS-AL-01
+Issue,I-0303,EP-03,EP-03,API-OUT-03/04/05/07 theo hợp đồng mới,,,,5,14,Sprint 3,,Todo,,,outbound-allocation-shipping/api-design.md · SYS-OUT-01
+Sub-issue,I-0303-1,I-0303,EP-03,API-OUT-03 phân bổ mỗi dòng một giao dịch,BE,2,3,3,8,Sprint 3,An,Todo,,,outbound-allocation-shipping/api-design.md · SYS-OUT-01
+Sub-issue,I-0303-2,I-0303,EP-03,API-OUT-05 chọn lô thủ công + API-OUT-07 hủy phân bổ,BE,2,2,2,6,Sprint 3,An,Todo,,,outbound-allocation-shipping/api-design.md · SYS-OUT-01
+Issue,I-0304,EP-03,EP-03,Màn OUTBOUND_LIST và OUTBOUND_ALLOCATION,,,,6,18,Sprint 3,,Todo,,,OUTBOUND_LIST_SPEC.md · OUTBOUND_ALLOCATION_SPEC.md
+Sub-issue,I-0304-1,I-0304,EP-03,OUTBOUND_LIST,FE,2,1,1,4,Sprint 3,Dũng,Todo,,,OUTBOUND_LIST_SPEC.md · OUTBOUND_ALLOCATION_SPEC.md
+Sub-issue,I-0304-2,I-0304,EP-03,"OUTBOUND_ALLOCATION: chuỗi đánh giá, tách lô",FE,3,3,5,14,Sprint 3,Chi,Todo,,,OUTBOUND_LIST_SPEC.md · OUTBOUND_ALLOCATION_SPEC.md
+Issue,I-0305,EP-03,EP-03,Kiểm xuất OUTBOUND_SHIP_CHECK và API-OUT-06,,,,8,26,Sprint 3,,Todo,,,OUTBOUND_SHIP_CHECK_SPEC.md · T-04 · SH-* · PM-15 · PREMISE(LAB-4) B-7
+Sub-issue,I-0305-1,I-0305,EP-03,"API-OUT-06: seal, nhiệt khoang, quét lô",BE,2,3,3,10,Sprint 3,Bình,Todo,,,OUTBOUND_SHIP_CHECK_SPEC.md · T-04 · SH-* · PM-15 · PREMISE(LAB-4) B-7
+Sub-issue,I-0305-2,I-0305,EP-03,Màn kiểm xuất + quét mã lô,FE,3,2,3,10,Sprint 3,Dũng,Todo,,,OUTBOUND_SHIP_CHECK_SPEC.md · T-04 · SH-* · PM-15 · PREMISE(LAB-4) B-7
+Sub-issue,I-0305-3,I-0305,EP-03,Test đạt / chặn / tạo deviation,QA,2,2,2,6,Sprint 3,Hà,Todo,,,OUTBOUND_SHIP_CHECK_SPEC.md · T-04 · SH-* · PM-15 · PREMISE(LAB-4) B-7
+Epic,EP-04,,EP-04,Cảnh báo đảo hạn,,,,9,28,,,,,,requirements/app/date-reversal-alert · allocation-chain.md Rule A-06
+Issue,I-0401,EP-04,EP-04,Rule A-06 theo `completed_at` của POD,,,,4,12,Sprint 3,,Todo,,,PM-04 · B-7 · Rule A-06
+Sub-issue,I-0401-1,I-0401,EP-04,Truy vấn lần giao gần nhất + tạo cảnh báo,BE,2,3,3,8,Sprint 3,Bình,Todo,,,PM-04 · B-7 · Rule A-06
+Sub-issue,I-0401-2,I-0401,EP-04,Test ví dụ đảo hạn,QA,1,2,1,4,Sprint 3,Hà,Todo,,,PM-04 · B-7 · Rule A-06
+Issue,I-0402,EP-04,EP-04,REVERSAL_ALERT_LIST / DETAIL và API-AL-01…03,,,,5,16,Sprint 3,,Todo,,,REVERSAL_ALERT_LIST_SPEC.md · REVERSAL_ALERT_DETAIL_SPEC.md
+Sub-issue,I-0402-1,I-0402,EP-04,API-AL-01/02/03 với mã lỗi E014xx,BE,2,2,2,6,Sprint 3,Bình,Todo,,,REVERSAL_ALERT_LIST_SPEC.md · REVERSAL_ALERT_DETAIL_SPEC.md
+Sub-issue,I-0402-2,I-0402,EP-04,Danh sách + chi tiết so sánh lô,FE,3,2,3,10,Sprint 3,Chi,Todo,,,REVERSAL_ALERT_LIST_SPEC.md · REVERSAL_ALERT_DETAIL_SPEC.md
+Epic,EP-05,,EP-05,"Tồn kho, trạng thái lô và lịch sử giao",,,,19,59,,,,,,requirements/app/inventory-lot-status
+Issue,I-0501,EP-05,EP-05,`lot_status_events` bất biến và API-LOT-02/03,,,,5,14,Sprint 3,,Todo,,,LOT_DETAIL_SPEC.md · api-design.md · GAP-07 · E01505
+Sub-issue,I-0501-1,I-0501,EP-05,Bảng + trigger chỉ ghi thêm + hàm `change_lot_status`,DB,2,3,3,8,Sprint 3,An,Todo,,,LOT_DETAIL_SPEC.md · api-design.md · GAP-07 · E01505
+Sub-issue,I-0501-2,I-0501,EP-05,API-LOT-02/03 theo ma trận vai trò,BE,2,2,2,6,Sprint 3,An,Todo,,,LOT_DETAIL_SPEC.md · api-design.md · GAP-07 · E01505
+Issue,I-0502,EP-05,EP-05,Màn LOT_INVENTORY và LOT_DETAIL,,,,5,18,Sprint 4,,Todo,,,LOT_INVENTORY_SPEC.md · LOT_DETAIL_SPEC.md
+Sub-issue,I-0502-1,I-0502,EP-05,"LOT_INVENTORY: lọc dải nhiệt, trạng thái",FE,2,2,2,8,Sprint 4,Dũng,Todo,,,LOT_INVENTORY_SPEC.md · LOT_DETAIL_SPEC.md
+Sub-issue,I-0502-2,I-0502,EP-05,LOT_DETAIL: dòng thời gian + đổi trạng thái,FE,3,2,3,10,Sprint 4,Dũng,Todo,,,LOT_INVENTORY_SPEC.md · LOT_DETAIL_SPEC.md
+Issue,I-0503,EP-05,EP-05,Lịch sử giao ghi lúc POD và đảo lịch sử (người lập ≠ người duyệt),,,,9,27,Sprint 3,,Todo,,,SHIPMENT_HISTORY_SPEC.md · API-HIS-02/03/04 · GAP-09 · E01902
+Sub-issue,I-0503-1,I-0503,EP-05,API-HIS-04 nhận sự kiện POD (xác thực chữ ký),BE,2,2,2,6,Sprint 3,Bình,Todo,,,SHIPMENT_HISTORY_SPEC.md · API-HIS-02/03/04 · GAP-09 · E01902
+Sub-issue,I-0503-2,I-0503,EP-05,`shipment_history_reversals` + API-HIS-02/03,BE,2,3,3,8,Sprint 4,Bình,Todo,,,SHIPMENT_HISTORY_SPEC.md · API-HIS-02/03/04 · GAP-09 · E01902
+Sub-issue,I-0503-3,I-0503,EP-05,SHIPMENT_HISTORY + đề xuất / duyệt đảo,FE,3,2,3,10,Sprint 4,Chi,Todo,,,SHIPMENT_HISTORY_SPEC.md · API-HIS-02/03/04 · GAP-09 · E01902
+Sub-issue,I-0503-4,I-0503,EP-05,Test người lập ≠ người duyệt (E01902),QA,1,2,1,3,Sprint 4,Hà,Todo,,,SHIPMENT_HISTORY_SPEC.md · API-HIS-02/03/04 · GAP-09 · E01902
+Epic,EP-06,,EP-06,Ngưỡng nhiệt 3 dải có phiên bản,,,,13,42,,,,,,requirements/app/temperature-policy · temperature-bands.md · PM-05/06
+Issue,I-0601,EP-06,EP-06,Schema `temp_policy_versions` + `temp_policy_band_values`,,,,3,9,Sprint 1,,Done,9,,table-definitions.md · GAP-02 · GAP-04
+Sub-issue,I-0601-1,I-0601,EP-06,Schema phiên bản + nạp v1 (PM-05),DB,2,2,2,6,Sprint 1,An,Done,6,,table-definitions.md · GAP-02 · GAP-04
+Sub-issue,I-0601-2,I-0601,EP-06,"Bắt buộc một chữ số thập phân, bỏ làm tròn `numeric(4,1)`",DB,1,2,1,3,Sprint 1,An,Done,3,,table-definitions.md · GAP-02 · GAP-04
+Issue,I-0602,EP-06,EP-06,API-TP-01…05 và vòng đời phiên bản,,,,5,15,Sprint 1,,Done,17,,temperature-policy/api-design.md · SYS-NT-02 · E01604
+Sub-issue,I-0602-1,I-0602,EP-06,API-TP-01…05 + kiểm người lập ≠ người duyệt,BE,2,3,3,10,Sprint 1,Bình,Done,12,,temperature-policy/api-design.md · SYS-NT-02 · E01604
+Sub-issue,I-0602-2,I-0602,EP-06,Job kích hoạt theo `effective_from` (pg_cron),DB,2,2,2,5,Sprint 1,Bình,Done,5,,temperature-policy/api-design.md · SYS-NT-02 · E01604
+Issue,I-0603,EP-06,EP-06,Màn TEMP_POLICY,,,,5,18,Sprint 1,,In Progress,6,,TEMP_POLICY_SPEC.md
+Sub-issue,I-0603-1,I-0603,EP-06,"TEMP_POLICY: danh sách phiên bản, form nháp, duyệt",FE,3,2,3,12,Sprint 1,Chi,In Progress,6,,TEMP_POLICY_SPEC.md
+Sub-issue,I-0603-2,I-0603,EP-06,Test 10 ví dụ biên + phiên bản theo ngày,QA,2,2,2,6,Sprint 2,Hà,Todo,,,TEMP_POLICY_SPEC.md
+Epic,EP-07,,EP-07,[Giờ lái 2024] Bộ quy tắc và engine `evaluateRoute`,,,,37,105,,,,,Giờ lái 2024,"system/rules/driver-hours.md (JP-TRUCK-2024-04, H-01…H-12) · DRIVER_RULESET_SPEC.md · ADR-0003 · PM-07…PM-11"
+Issue,I-0701,EP-07,EP-07,Schema bộ quy tắc + nạp `JP-TRUCK-2024-04`,,,,3,9,Sprint 1,,Done,9,Giờ lái 2024,driver-hours.md §2 · table-definitions.md §E
+Sub-issue,I-0701-1,I-0701,EP-07,Bảng bộ quy tắc + nạp 12 giá trị + CHECK,DB,2,2,2,6,Sprint 1,An,Done,6,Giờ lái 2024,driver-hours.md §2 · table-definitions.md §E
+Sub-issue,I-0701-2,I-0701,EP-07,"Đối chiếu 12 giá trị với cổng MHLW, ghi nguồn",BA,1,2,1,3,Sprint 1,Lan,Done,3,Giờ lái 2024,driver-hours.md §2 · table-definitions.md §E
+Issue,I-0702,EP-07,EP-07,"Engine: dựng ca, 拘束時間 trong ngày (H-03, H-04, H-05)",,,,4,11,Sprint 1,,Done,11,Giờ lái 2024,driver-hours.md §3 bước 2–3 · PM-10
+Sub-issue,I-0702-1,I-0702,EP-07,Dựng ca từ đoạn có kiểu + H-03/H-04,BE,1,3,2,6,Sprint 1,An,Done,6,Giờ lái 2024,driver-hours.md §3 bước 2–3 · PM-10
+Sub-issue,I-0702-2,I-0702,EP-07,Đếm ngày > 14 h theo tuần JST (H-05),BE,1,3,2,5,Sprint 1,An,Done,5,Giờ lái 2024,driver-hours.md §3 bước 2–3 · PM-10
+Issue,I-0703,EP-07,EP-07,"Engine: thời gian nghỉ giữa ca (H-06, H-07)",BE,1,2,1,4,Sprint 1,An,Done,4,Giờ lái 2024,driver-hours.md §3 bước 4
+Issue,I-0704,EP-07,EP-07,"Engine: lái liên tục và gián đoạn đạt chuẩn (H-10, H-11)",,,,5,15,Sprint 1,,In Progress,16,Giờ lái 2024,"driver-hours.md §3 bước 5 · FR-SCH-02 ""正確な違反時間範囲"""
+Sub-issue,I-0704-1,I-0704,EP-07,Thuật toán `drive_since_break` + nhóm BREAK đạt chuẩn,BE,1,4,3,10,Sprint 1,Bình,Done,11,Giờ lái 2024,"driver-hours.md §3 bước 5 · FR-SCH-02 ""正確な違反時間範囲"""
+Sub-issue,I-0704-2,I-0704,EP-07,Trả khoảng vi phạm chính xác (mốc vượt 4 h),BE,1,3,2,5,Sprint 1,Bình,In Review,5,Giờ lái 2024,"driver-hours.md §3 bước 5 · FR-SCH-02 ""正確な違反時間範囲"""
+Issue,I-0705,EP-07,EP-07,"Engine: trung bình lái 2 ngày và 2 tuần (H-08, H-09)",,,,5,13,Sprint 2,,Todo,,Giờ lái 2024,driver-hours.md §3 bước 6–7
+Sub-issue,I-0705-1,I-0705,EP-07,"Tổng lái theo ngày từ lịch sử + tuyến, trung bình 2 ngày (H-08)",BE,2,3,3,8,Sprint 2,An,Todo,,Giờ lái 2024,driver-hours.md §3 bước 6–7
+Sub-issue,I-0705-2,I-0705,EP-07,Cửa sổ 2 tuần dương lịch (H-09),BE,1,3,2,5,Sprint 2,An,Todo,,Giờ lái 2024,driver-hours.md §3 bước 6–7
+Issue,I-0706,EP-07,EP-07,"Engine: 拘束時間 tháng/năm, thỏa thuận lao động, làm thêm (H-01, H-02, H-12)",,,,6,15,Sprint 2,,Todo,,Giờ lái 2024,driver-hours.md §3 bước 8–9 · PREMISE.md B-01
+Sub-issue,I-0706-1,I-0706,EP-07,"Tổng tháng/năm, trần theo thỏa thuận, đếm 6 tháng và 3 tháng liên tiếp",BE,2,4,5,12,Sprint 2,Bình,Todo,,Giờ lái 2024,driver-hours.md §3 bước 8–9 · PREMISE.md B-01
+Sub-issue,I-0706-2,I-0706,EP-07,H-12 làm thêm 960 h từ số liệu HR,BE,1,2,1,3,Sprint 2,Bình,Todo,,Giờ lái 2024,driver-hours.md §3 bước 8–9 · PREMISE.md B-01
+Issue,I-0707,EP-07,EP-07,Bộ vector kiểm thử dùng chung cho giờ lái,,,,4,13,Sprint 1,,In Progress,5,Giờ lái 2024,NFR-TST-01 · driver-hours.md §6 · specs/tools/verify_rules.py
+Sub-issue,I-0707-1,I-0707,EP-07,13 ví dụ driver-hours.md thành unit test,QA,1,2,1,5,Sprint 1,Hà,Done,5,Giờ lái 2024,NFR-TST-01 · driver-hours.md §6 · specs/tools/verify_rules.py
+Sub-issue,I-0707-2,I-0707,EP-07,"Ca biên: 4 h 00, nghỉ 9 h 00, qua nửa đêm, 3 tháng liên tiếp",QA,2,3,3,8,Sprint 2,Hà,Todo,,Giờ lái 2024,NFR-TST-01 · driver-hours.md §6 · specs/tools/verify_rules.py
+Issue,I-0708,EP-07,EP-07,API-DR-01…04 và màn DRIVER_RULESET,,,,6,18,Sprint 3,,Todo,,Giờ lái 2024,DRIVER_RULESET_SPEC.md · API-DR-01…04 · E01803
+Sub-issue,I-0708-1,I-0708,EP-07,API-DR-01…04,BE,2,3,3,8,Sprint 3,An,Todo,,Giờ lái 2024,DRIVER_RULESET_SPEC.md · API-DR-01…04 · E01803
+Sub-issue,I-0708-2,I-0708,EP-07,Màn DRIVER_RULESET,FE,3,2,3,10,Sprint 3,Chi,Todo,,Giờ lái 2024,DRIVER_RULESET_SPEC.md · API-DR-01…04 · E01803
+Issue,I-0709,EP-07,EP-07,"[Làm rõ] Q-15: giới hạn nào chặn, giới hạn nào cảnh báo; xác nhận pháp lý",,,,3,7,Sprint 1,,Blocked,4,Giờ lái 2024,PM-08 (LAB-4) · Q-15 · OPS-LAW-01
+Sub-issue,I-0709-1,I-0709,EP-07,Bảng hỏi kèm ví dụ cho pháp chế Yuki,BA,1,2,1,3,Sprint 1,Lan,Done,3,Giờ lái 2024,PM-08 (LAB-4) · Q-15 · OPS-LAW-01
+Sub-issue,I-0709-2,I-0709,EP-07,"Họp xác nhận, cập nhật PM-08 và bộ quy tắc theo trả lời",TL,2,2,2,4,Sprint 1,Khoa,Blocked,1,Giờ lái 2024,PM-08 (LAB-4) · Q-15 · OPS-LAW-01
+Epic,EP-08,,EP-08,"[Giờ lái 2024] Lập tuyến, kiểm tra và công bố",,,,43,120,,,,,Giờ lái 2024,"requirements/app/route-driver-hours (ROUTE_LIST, ROUTE_CHECK) · API-RT-01…08 · IF-MAP-01"
+Issue,I-0801,EP-08,EP-08,"Schema tuyến, phiên bản, đoạn, kết quả tuân thủ, sự kiện khẩn cấp",DB,2,3,3,10,Sprint 1,Khoa,Done,10,Giờ lái 2024,table-definitions.md §E · erd.md §2
+Issue,I-0802,EP-08,EP-08,"API-RT-01…04: tạo tuyến, lưu bản nháp đoạn có kiểu",,,,5,16,Sprint 2,,Todo,,Giờ lái 2024,route-driver-hours/api-design.md · E01705
+Sub-issue,I-0802-1,I-0802,EP-08,API-RT-01/02/03,BE,2,2,2,8,Sprint 2,Bình,Todo,,Giờ lái 2024,route-driver-hours/api-design.md · E01705
+Sub-issue,I-0802-2,I-0802,EP-08,"API-RT-04 lưu phiên bản nháp, kiểm đoạn chồng lấn",BE,2,3,3,8,Sprint 2,Bình,Todo,,Giờ lái 2024,route-driver-hours/api-design.md · E01705
+Issue,I-0803,EP-08,EP-08,IF-MAP-01: adapter dịch vụ bản đồ và nhập tay khi lỗi,,,,8,18,Sprint 2,,Todo,,Giờ lái 2024,driver-hours.md §8 · ADR-0008 · Q-23 · E01706
+Sub-issue,I-0803-1,I-0803,EP-08,Interface adapter + bản giả lập + nhập tay + cache,BE,2,3,3,8,Sprint 2,An,Todo,,Giờ lái 2024,driver-hours.md §8 · ADR-0008 · Q-23 · E01706
+Sub-issue,I-0803-2,I-0803,EP-08,Adapter nhà cung cấp bản đồ: thời gian chạy xe tải theo đoạn (chờ Q-23),BE,2,3,3,6,Sprint 4,An,Todo,,Giờ lái 2024,driver-hours.md §8 · ADR-0008 · Q-23 · E01706
+Sub-issue,I-0803-3,I-0803,EP-08,"Kiểm thử adapter với sandbox nhà cung cấp: timeout, cache (chờ Q-23)",QA,2,2,2,4,Sprint 4,Hà,Todo,,Giờ lái 2024,driver-hours.md §8 · ADR-0008 · Q-23 · E01706
+Issue,I-0804,EP-08,EP-08,API-RT-05 kiểm tra tuyến và API-RT-06 gợi ý điểm nghỉ,,,,5,14,Sprint 3,,Todo,,Giờ lái 2024,driver-hours.md §3–§4 · FR-SCH-03
+Sub-issue,I-0804-1,I-0804,EP-08,API-RT-05 lưu kết quả và vi phạm,BE,2,2,2,6,Sprint 3,Bình,Todo,,Giờ lái 2024,driver-hours.md §3–§4 · FR-SCH-03
+Sub-issue,I-0804-2,I-0804,EP-08,Thuật toán gợi ý điểm nghỉ (API-RT-06),BE,1,4,3,8,Sprint 3,An,Todo,,Giờ lái 2024,driver-hours.md §3–§4 · FR-SCH-03
+Issue,I-0805,EP-08,EP-08,"API-RT-07 công bố: chặn khi có BLOCK, gắn phiên bản bộ quy tắc",,,,4,11,Sprint 3,,Todo,,Giờ lái 2024,driver-hours.md §3 bước 10 · E01702 · sequence-backend.md
+Sub-issue,I-0805-1,I-0805,EP-08,Hàm công bố nguyên tử + upsert `driver_duty_days`,BE,2,3,3,8,Sprint 3,Bình,Todo,,Giờ lái 2024,driver-hours.md §3 bước 10 · E01702 · sequence-backend.md
+Sub-issue,I-0805-2,I-0805,EP-08,Test không đánh giá lại khi đổi bộ quy tắc,QA,1,2,1,3,Sprint 3,Hà,Todo,,Giờ lái 2024,driver-hours.md §3 bước 10 · E01702 · sequence-backend.md
+Issue,I-0806,EP-08,EP-08,API-RT-08 sự kiện khẩn cấp có bằng chứng,BE,2,3,3,8,Sprint 4,Bình,Todo,,Giờ lái 2024,driver-hours.md §5 · FR-SCH-05 · PM-11
+Issue,I-0807,EP-08,EP-08,Màn ROUTE_LIST,FE,2,1,1,5,Sprint 2,Dũng,Todo,,Giờ lái 2024,ROUTE_LIST_SPEC.md · API-RT-01
+Issue,I-0808,EP-08,EP-08,"Màn ROUTE_CHECK: sửa đoạn, timeline vi phạm, gợi ý nghỉ, công bố",,,,14,38,Sprint 3,,Todo,,Giờ lái 2024,ROUTE_CHECK_SPEC.md · sequence-ui.md
+Sub-issue,I-0808-1,I-0808,EP-08,Trình sửa các đoạn có kiểu,FE,3,3,5,14,Sprint 3,Chi,Todo,,Giờ lái 2024,ROUTE_CHECK_SPEC.md · sequence-ui.md
+Sub-issue,I-0808-2,I-0808,EP-08,Timeline tô khoảng vi phạm + gợi ý nghỉ,FE,3,3,5,12,Sprint 3,Dũng,Todo,,Giờ lái 2024,ROUTE_CHECK_SPEC.md · sequence-ui.md
+Sub-issue,I-0808-3,I-0808,EP-08,Chế độ xem đơn giản cho DRIVER,FE,2,1,1,4,Sprint 4,Dũng,Todo,,Giờ lái 2024,ROUTE_CHECK_SPEC.md · sequence-ui.md
+Sub-issue,I-0808-4,I-0808,EP-08,E2E lập → kiểm → công bố tuyến,QA,3,2,3,8,Sprint 4,Hà,Todo,,Giờ lái 2024,ROUTE_CHECK_SPEC.md · sequence-ui.md
+Epic,EP-09,,EP-09,[Giờ lái 2024] Dữ liệu đầu vào giờ làm của tài xế,,,,9,28,,,,,Giờ lái 2024,"table-definitions.md `drivers`, `driver_duty_days` · SYS-DH-01 · PREMISE.md B-02, B-03"
+Issue,I-0901,EP-09,EP-09,"Nạp danh mục tài xế, xe và cờ thỏa thuận lao động (CSV)",,,,3,9,Sprint 2,,Todo,,Giờ lái 2024,"PREMISE.md B-02 · table-definitions.md `drivers`, `vehicles`"
+Sub-issue,I-0901-1,I-0901,EP-09,Bảng `drivers` / `vehicles` + RLS,DB,1,2,1,3,Sprint 2,An,Todo,,Giờ lái 2024,"PREMISE.md B-02 · table-definitions.md `drivers`, `vehicles`"
+Sub-issue,I-0901-2,I-0901,EP-09,Nạp CSV tài xế/xe/cờ thỏa thuận + kiểm tra,BE,2,2,2,6,Sprint 2,An,Todo,,Giờ lái 2024,"PREMISE.md B-02 · table-definitions.md `drivers`, `vehicles`"
+Issue,I-0902,EP-09,EP-09,"Nạp lịch sử giờ làm 365 ngày (`driver_duty_days`, source IMPORT)",,,,4,12,Sprint 3,,Todo,,Giờ lái 2024,PREMISE.md B-03 · driver-hours.md §3 đầu vào
+Sub-issue,I-0902-1,I-0902,EP-09,"API nạp CSV `driver_duty_days`, kiểm trùng với ROUTE",BE,2,3,3,8,Sprint 3,Bình,Todo,,Giờ lái 2024,PREMISE.md B-03 · driver-hours.md §3 đầu vào
+Sub-issue,I-0902-2,I-0902,EP-09,Test lịch sử qua ranh giới tuần/tháng,QA,1,2,1,4,Sprint 3,Hà,Todo,,Giờ lái 2024,PREMISE.md B-03 · driver-hours.md §3 đầu vào
+Issue,I-0903,EP-09,EP-09,Giờ làm thêm năm từ HR (SYS-DH-01),BE,1,2,1,3,Sprint 3,An,Todo,,Giờ lái 2024,SYS-DH-01 · H-12 · PREMISE.md A-03
+Issue,I-0904,EP-09,EP-09,"[Làm rõ] Ca qua nửa đêm: ""ngày"" tính theo lịch hay 24 h từ giờ bắt đầu ca",BA,1,3,1,4,Sprint 1,Lan,Blocked,3,Giờ lái 2024,PREMISE.md A-01 · driver-hours.md H-08 · `driver_duty_days.duty_date`
+Epic,EP-10,,EP-10,"Hạ tầng, kiểm thử xuyên suốt và phát hành",,,,17,47,,,,,,system/nfr/nfr.md · system/architecture/overview.md · ADR-0009
+Issue,I-1001,EP-10,EP-10,Môi trường Tokyo và CI,,,,4,12,Sprint 1,,Done,13,,NFR-DAT-01 · ADR-0009 · GAP-10
+Sub-issue,I-1001-1,I-1001,EP-10,"Dựng project Tokyo, biến môi trường, secret",OPS,2,2,2,6,Sprint 1,Minh,Done,6,,NFR-DAT-01 · ADR-0009 · GAP-10
+Sub-issue,I-1001-2,I-1001,EP-10,"GitHub Actions: lint, typecheck, unit, pgTAP",OPS,2,2,2,6,Sprint 1,Minh,Done,7,,NFR-DAT-01 · ADR-0009 · GAP-10
+Issue,I-1002,EP-10,EP-10,"Sao lưu, PITR và runbook khôi phục",OPS,2,2,2,5,Sprint 3,Minh,Todo,,,NFR-BKP-01
+Issue,I-1003,EP-10,EP-10,Kiểm thử hiệu năng NFR-PERF-01/02,QA,2,3,3,8,Sprint 4,Hà,Todo,,,NFR-PERF-01 · NFR-PERF-02
+Issue,I-1004,EP-10,EP-10,E2E hồi quy luồng chính,QA,4,2,5,12,Sprint 4,Hà,Todo,,,overview.md §3
+Issue,I-1005,EP-10,EP-10,Giao diện JA/VI,FE,4,1,3,10,Sprint 4,Chi,Todo,,,NFR-LOC-01 · PM-12
